@@ -1,14 +1,18 @@
-import React from 'react'
-import Brand from './Brand'
-import WhoWeAre from './WhoWeAre'
+import React from "react";
+import Brand from "./Brand";
+import WhoWeAre from "./WhoWeAre";
+import Services from "./Services";
 
 const Index = () => {
   return (
-    <div className='main-padding'>
+    <>
+      <div className="main-padding">
         <Brand />
         <WhoWeAre />
-    </div>
-  )
-}
+      </div>
+      <Services />
+    </>
+  );
+};
 
-export default Index
+export default Index;
