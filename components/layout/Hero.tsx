@@ -17,7 +17,7 @@ const Hero = () => {
   ];
 
   return (
-    <section className="mt-[100px] grid lg:grid-cols-2 gap-10 items-center main-padding relative">
+    <section className="mt-[100px] grid md:grid-cols-2 gap-10 items-center main-padding relative">
       <div>
         <h1 className="text-4xl lg:text-5xl font-bold leading-tight">
           Web Development Company right at the touch!

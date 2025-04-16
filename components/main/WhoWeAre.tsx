@@ -20,8 +20,8 @@ const WhoWeAre = () => {
       <Title items={headerItems} />
       <hr className="border border-gray-300" />
 
-      <div className="grid lg:grid-cols-2 text-[#D5D5D5] relative">
-        <div className="lg:flex lg:flex-col lg:justify-center pt-5 lg:pt-0">
+      <div className="grid md:grid-cols-2 text-[#D5D5D5] relative">
+        <div className="md:flex md:flex-col lg:justify-center pt-5 lg:pt-0">
           <h1 className="text-xl lg:text-4xl font-bold">
             {contentData.heading}
           </h1>
