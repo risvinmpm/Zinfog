@@ -5,7 +5,7 @@ import partners from '@/public/partners.png';
 
 const Brand = () => {
   return (
-    <section className="py-8">
+    <section className="py-8 main-padding">
       <h1 className="text-xl sm:text-2xl font-semibold mt-15 lg:mt-20">
         Top brands choose us for their work
       </h1>

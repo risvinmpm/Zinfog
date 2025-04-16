@@ -2,15 +2,19 @@ import React from "react";
 import Brand from "./Brand";
 import WhoWeAre from "./WhoWeAre";
 import Services from "./Services";
+import Help from "./Help";
+import Marquee from "./Marquee";
+
+
 
 const Index = () => {
   return (
     <>
-      <div className="main-padding">
         <Brand />
         <WhoWeAre />
-      </div>
-      <Services />
+        <Services />
+        <Marquee />
+        <Help />
     </>
   );
 };
