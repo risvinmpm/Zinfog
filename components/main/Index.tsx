@@ -4,6 +4,7 @@ import WhoWeAre from "./WhoWeAre";
 import Services from "./Services";
 import Help from "./Help";
 import Marquee from "./Marquee";
+import Work from "./Work";
 
 
 
@@ -15,6 +16,7 @@ const Index = () => {
         <Services />
         <Marquee />
         <Help />
+        <Work />
     </>
   );
 };

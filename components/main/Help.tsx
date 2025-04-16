@@ -141,15 +141,16 @@ const Help: React.FC = () => {
             >
               <div className="flex flex-col lg:flex-row gap-6">
                 {/* Left Column (Icon + Title + Subtitle) */}
-                <div className="lg:w-1/2 flex flex-col gap-2">
-                  <div className="flex items-center gap-4">
+                <div className="lg:w-1/2 flex flex-col gap-2 relative">
+                  <div className="items-center">
                     <Image
                       src={service.icon}
                       alt={service.title}
                       width={60}
                       height={60}
+                      className="absolute"
                     />
-                    <h2 className="text-2xl font-semibold pe-10">
+                    <h2 className="text-2xl font-semibold ml-20 lg:pe-10">
                       {service.title}
                     </h2>
                   </div>
