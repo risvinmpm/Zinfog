@@ -31,7 +31,7 @@ const Work: React.FC = () => {
 
       <hr className="border border-gray-300" />
 
-      <div className="bg-[#AB5895] w-full h-full grid lg:grid-cols-5 mt-10 lg:mt-20 p-7 lg:p-14">
+      <div className="bg-[#AB5895] w-full h-full grid md:grid-cols-5 mt-10 md:my-20 p-7 md:p-14">
         {/* Left side - project details from array */}
         <div className="col-span-3">
           {projects.map((project, index) => (
