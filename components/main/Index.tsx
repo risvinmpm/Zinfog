@@ -5,6 +5,7 @@ import Services from "./Services";
 import Help from "./Help";
 import Marquee from "./Marquee";
 import Work from "./Work";
+import OurProducts from "./OurProducts";
 
 
 
@@ -17,6 +18,7 @@ const Index = () => {
         <Marquee />
         <Help />
         <Work />
+        <OurProducts />
     </>
   );
 };
