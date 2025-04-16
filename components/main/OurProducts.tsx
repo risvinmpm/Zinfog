@@ -33,7 +33,7 @@ const OurProducts = () => {
           {products.map((product, index) => (
             <div
               key={index}
-              className="flex flex-col lg:flex-row gap-10 items-center"
+              className="flex flex-col md:flex-row gap-10 items-center"
             >
               {/* Left Image */}
               <div className="w-full lg:w-1/2">
