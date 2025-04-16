@@ -3,6 +3,7 @@
 body {
   background-color: rgb(27, 29, 50);
   color: #fff;
+  scroll-behavior: smooth;
 }
 
 .main-padding {
@@ -11,5 +12,14 @@ body {
 
 .btn_blue {
   @apply bg-blue-500 px-4 py-2 text-white;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none; 
+  scrollbar-width: none;
 }
 

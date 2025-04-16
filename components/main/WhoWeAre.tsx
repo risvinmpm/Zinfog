@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import Button from "../common/Button";
+import Title from "../common/Title";
 
 const headerItems = ["Who We Are?", "about us"];
 
@@ -14,13 +15,9 @@ const contentData = {
 
 const WhoWeAre = () => {
   return (
-    <>
-      <div className="flex justify-between text-xl font-medium pb-1 pt-10">
-        {headerItems.map((item, index) => (
-          <h4 key={index}>{index === 0 ? <li>{item}</li> : item}</h4>
-        ))}
-      </div>
+    <div className="main-padding">
 
+      <Title items={headerItems} />
       <hr className="border border-gray-300" />
 
       <div className="grid lg:grid-cols-2 text-[#D5D5D5] relative">
@@ -52,7 +49,7 @@ const WhoWeAre = () => {
           <Image src="/man.png" width={400} height={500} alt="man" />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
