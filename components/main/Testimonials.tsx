@@ -24,7 +24,7 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="py-10 px-4">
+    <section className="py-10 lg:py-20 px-4 main-padding bg-gradient-to-r from-[#17182b] via-[#1b1b1e] to-[#17182b]">
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="text-3xl font-bold mb-8">Our customers become our friends </h2>
         <ClientSwiper testimonials={testimonials} />

@@ -7,6 +7,7 @@ import Marquee from "./Marquee";
 import Work from "./Work";
 import OurProducts from "./OurProducts";
 import Testimonials from "./Testimonials";
+import OurBlog from "./OurBlog";
 
 
 
@@ -21,6 +22,7 @@ const Index = () => {
         <Work />
         <OurProducts />
         <Testimonials />
+        <OurBlog />
     </>
   );
 };
