@@ -3,6 +3,7 @@ import Title from "../common/Title";
 import Button from "../common/Button";
 import Image from "next/image";
 import Link from "next/link";
+import { LinkPreview } from "@/components/Ui/link-preview";
 
 const Help: React.FC = () => {
   const headerItems = ["How can we Help?"];
@@ -13,8 +14,8 @@ const Help: React.FC = () => {
       description:
         "Being a custom ERP development company, our focus also lies on building ERP systems for small businesses as well as giant tycoons across various industries—providing digital solutions.",
       buttonTitle: "EXPLORE OUR WORK",
-      buttonIcon: "/arrow.png",
-    },
+      buttonIcon: "/arrow.png"
+    }
   ];
 
   const services = [
@@ -27,76 +28,64 @@ const Help: React.FC = () => {
         "The best Odoo development company focuses on building a hassle-free work environment for the business industries. We provide Odoo ERP Customization and consulting services to meet the client’s needs that help us develop a tailored fit ERP Software.",
       buttons: [
         { title: "See demo", variant: "btn_blue" },
-        { title: "KNOW MORE", variant: "", icon: "/arrow.png" },
+        { title: "KNOW MORE", variant: "", icon: "/arrow.png" }
       ],
-      image: "/odoo.png",
+      image: "/odoo.png"
     },
     {
       icon: "/mob.png",
       title: "Mobile app development",
       subtitle: "",
-      link: "",
+      link: "https://nextjs.org/docs/app/getting-started/installation",
       description:
         "Being a Top Mobile app development company, We have developed customized mobile apps for the clients with the help of our strongest team that have core skills and creativity. We are the mobile app development agency if you are looking for someone to develop an app for you.",
-      buttons: [
-        { title: "KNOW MORE", variant: "", icon: "/arrow.png" },
-      ],
+      buttons: [{ title: "KNOW MORE", variant: "", icon: "/arrow.png" }]
     },
     {
       icon: "/web_dvlp.png",
       title: "Website development",
       subtitle: "",
-      link: "",
+      link: "https://framer.com/motion",
       description:
         "In the 21st century, Search trafficking plays an important role in converting leads to sales. A well maintained website is a requirement of every company and being a web development company, we can help you well with your needs.",
-      buttons: [
-        { title: "KNOW MORE", variant: "", icon: "/arrow.png" },
-      ],
+      buttons: [{ title: "KNOW MORE", variant: "", icon: "/arrow.png" }]
     },
     {
       icon: "/customization.png",
       title: "Customization Third party Software integration",
       subtitle: "",
-      link: "",
+      link: "https://ui.aceternity.com/components/link-preview",
       description:
         "In the 21st century, Search trafficking plays an important role in converting leads to sales. A well maintained website is a requirement of every company and being a web development company, we can help you well with your needs.",
-      buttons: [
-        { title: "KNOW MORE", variant: "", icon: "/arrow.png" },
-      ],
+      buttons: [{ title: "KNOW MORE", variant: "", icon: "/arrow.png" }]
     },
     {
       icon: "/desktop.png",
       title: "Desktop application management",
       subtitle: "",
-      link: "",
+      link: "https://chatgpt.com/c/67fa3c50-5f74-8002-90d0-d9e1a401940c",
       description:
         "In the 21st century, Search trafficking plays an important role in converting leads to sales. A well maintained website is a requirement of every company and being a web development company, we can help you well with your needs.",
-      buttons: [
-        { title: "KNOW MORE", variant: "", icon: "/arrow.png" },
-      ],
+      buttons: [{ title: "KNOW MORE", variant: "", icon: "/arrow.png" }]
     },
     {
       icon: "/brandingg.png",
       title: "Branding",
       subtitle: "",
-      link: "",
+      link: "https://framer.com/motion",
       description:
         "In the 21st century, Search trafficking plays an important role in converting leads to sales. A well maintained website is a requirement of every company and being a web development company, we can help you well with your needs.",
-      buttons: [
-        { title: "KNOW MORE", variant: "", icon: "/arrow.png" },
-      ],
+      buttons: [{ title: "KNOW MORE", variant: "", icon: "/arrow.png" }]
     },
     {
       icon: "/ui_ux.png",
       title: "UI/UX Design",
       subtitle: "",
-      link: "",
+      link: "https://framer.com/motion",
       description:
         "In the 21st century, Search trafficking plays an important role in converting leads to sales. A well maintained website is a requirement of every company and being a web development company, we can help you well with your needs.",
-      buttons: [
-        { title: "KNOW MORE", variant: "", icon: "/arrow.png" },
-      ],
-    },
+      buttons: [{ title: "KNOW MORE", variant: "", icon: "/arrow.png" }]
+    }
   ];
 
   return (
@@ -118,12 +107,16 @@ const Help: React.FC = () => {
           </div>
           <div>
             <p className="text-base pb-5">{item.description}</p>
-            <Button
-              type="button"
-              variant=""
-              title={item.buttonTitle}
-              icon={item.buttonIcon}
-            />
+            <div className="flex items-center">
+              <LinkPreview url="https://framer.com/motion">
+                <Button
+                  type="button"
+                  variant=""
+                  title={item.buttonTitle}
+                  icon={item.buttonIcon}
+                />
+              </LinkPreview>
+            </div>
           </div>
         </div>
       ))}
@@ -155,7 +148,11 @@ const Help: React.FC = () => {
                     </h2>
                   </div>
                   <h3 className="text-sm font-bold">
-                    <Link href={service.link} target="_blank" rel="noopener noreferrer">
+                    <Link
+                      href={service.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       {service.subtitle}
                     </Link>
                   </h3>
@@ -165,15 +162,25 @@ const Help: React.FC = () => {
                 <div className="flex flex-col gap-4 lg:w-2/3">
                   <p>{service.description}</p>
                   <div className="flex gap-4 flex-wrap">
-                    {service.buttons.map((btn, idx) => (
-                      <Button
-                        key={idx}
-                        title={btn.title}
-                        variant={btn.variant}
-                        icon={btn.icon}
-                        type="button"
-                      />
-                    ))}
+                    {service.buttons.map((btn, idx) => {
+                      const button = (
+                        <Button
+                          key={idx}
+                          title={btn.title}
+                          variant={btn.variant}
+                          icon={btn.icon}
+                          type="button"
+                        />
+                      );
+
+                      return service.link ? (
+                        <LinkPreview key={idx} url={service.link}>
+                          {button}
+                        </LinkPreview>
+                      ) : (
+                        <div key={idx}>{button}</div>
+                      );
+                    })}
                   </div>
                 </div>
               </div>

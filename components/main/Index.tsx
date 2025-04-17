@@ -8,6 +8,7 @@ import Work from "./Work";
 import OurProducts from "./OurProducts";
 import Testimonials from "./Testimonials";
 import OurBlog from "./OurBlog";
+import Enquiry from "./Enquiry";
 
 
 
@@ -23,6 +24,7 @@ const Index = () => {
         <OurProducts />
         <Testimonials />
         <OurBlog />
+        <Enquiry />
     </>
   );
 };
