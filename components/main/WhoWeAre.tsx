@@ -1,7 +1,10 @@
+"use client"
 import Image from "next/image";
 import React from "react";
 import Button from "../common/Button";
 import Title from "../common/Title";
+import { LinkPreview } from "@/components/Ui/link-preview";
+
 
 const headerItems = ["Who We Are?", "about us"];
 
@@ -35,13 +38,14 @@ const WhoWeAre = () => {
             </p>
           ))}
 
-          <div className="mt-5 lg:mt-7 font-bold">
-            <Button
+          <div className="mt-5 lg:mt-7 font-bold flex items-center">
+           <LinkPreview url="https://framer.com/motion"> <Button
               type="button"
               variant=""
               title="EXPLORE OUR WORK"
               icon="/arrow.png"
             />
+            </LinkPreview>
           </div>
         </div>
 
