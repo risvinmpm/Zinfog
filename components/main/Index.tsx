@@ -6,6 +6,7 @@ import Help from "./Help";
 import Marquee from "./Marquee";
 import Work from "./Work";
 import OurProducts from "./OurProducts";
+import Testimonials from "./Testimonials";
 
 
 
@@ -19,6 +20,7 @@ const Index = () => {
         <Help />
         <Work />
         <OurProducts />
+        <Testimonials />
     </>
   );
 };

@@ -35,7 +35,7 @@ const OurProducts = () => {
               key={index}
               className="flex flex-col md:flex-row gap-10 items-center"
             >
-              {/* Left Image */}
+              {/* Left Image */} 
               <div className="w-full lg:w-1/2">
                 <Image
                   src={product.image}
