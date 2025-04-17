@@ -7,7 +7,7 @@ body {
 }
 
 .main-padding {
-  @apply px-5 lg:px-[100px] xl:px-[200px];
+  @apply px-5 lg:px-[100px] xl:px-[200px] 2xl:px-[250px];
 }
 
 .btn_blue {
