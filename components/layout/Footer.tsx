@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
-import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter } from "react-icons/fa";
+
 
 const Footer = () => {
   const quickLinks = ["Home", "Services", "About Us", "Contact"];
@@ -19,6 +20,7 @@ const Footer = () => {
     { icon: <FaInstagram />, href: "#", label: "Instagram" },
     { icon: <FaTwitter />, href: "#", label: "Twitter" },
     { icon: <FaFacebookF />, href: "#", label: "Facebook" },
+    { icon: <FaLinkedinIn />, href: "#", label: "Linkedin" },
   ];
 
   return (
