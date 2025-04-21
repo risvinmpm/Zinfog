@@ -143,7 +143,7 @@ const Help: React.FC = () => {
                       height={60}
                       className="absolute"
                     />
-                    <h2 className="text-2xl font-semibold ml-20 lg:pe-10">
+                    <h2 className="text-2xl font-semibold ml-20">
                       {service.title}
                     </h2>
                   </div>
