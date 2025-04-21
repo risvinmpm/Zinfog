@@ -14,6 +14,12 @@ body {
   @apply bg-blue-500 px-4 py-2 text-white;
 }
 
+@layer utilities {
+  .word-spacing-custom {
+    word-spacing: 0.1em;
+  }
+}
+
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
@@ -22,4 +28,5 @@ body {
   -ms-overflow-style: none; 
   scrollbar-width: none;
 }
+
 
