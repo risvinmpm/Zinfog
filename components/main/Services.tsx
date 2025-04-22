@@ -1,10 +1,10 @@
 import Image from "next/image";
 import React from "react";
 
-import icon_1 from "@/public/icon_1.png";
-import icon_2 from "@/public/icon_2.png";
-import icon_3 from "@/public/icon_3.png";
-import icon_4 from "@/public/icon_4.png";
+import icon_1 from "../../public/icon_1.png";
+import icon_2 from "../../public/icon_2.png";
+import icon_3 from "../../public/icon_3.png";
+import icon_4 from "../../public/icon_4.png";
 
 
 const serviceItems = [

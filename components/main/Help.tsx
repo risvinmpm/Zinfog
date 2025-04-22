@@ -3,7 +3,7 @@ import Title from "../common/Title";
 import Button from "../common/Button";
 import Image from "next/image";
 import Link from "next/link";
-import { LinkPreview } from "@/components/Ui/link-preview";
+import { LinkPreview } from "../Ui/link-preview";
 
 const Help: React.FC = () => {
   const headerItems = ["How can we Help?"];

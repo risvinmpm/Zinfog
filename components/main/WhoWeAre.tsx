@@ -3,7 +3,7 @@ import Image from "next/image";
 import React from "react";
 import Button from "../common/Button";
 import Title from "../common/Title";
-import { LinkPreview } from "@/components/Ui/link-preview";
+import { LinkPreview } from "../Ui/link-preview";
 
 
 const headerItems = ["Who We Are?", "about us"];
