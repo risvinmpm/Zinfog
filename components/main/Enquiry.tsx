@@ -57,7 +57,7 @@ const Enquiry = () => {
               type="email"
               id="email"
               placeholder="your@email.com"
-              className="placeholder:text-gray-400 placeholder:text-3xl text-base border-b-2 border-gray-400 bg-transparent outline-none w-[280px] text-white py-3 pr-12"
+              className="placeholder:text-gray-400 placeholder:text-3xl text-base border-b-2 border-gray-400 bg-transparent outline-none w-[280px] text-white py-3 pr-12 ps-1"
             />
             <Image
               src="/arrow.png"

@@ -7,7 +7,7 @@ body {
 }
 
 .main-padding {
-  @apply px-5 lg:px-[100px] xl:px-[200px] 2xl:px-[250px];
+  @apply px-5 lg:px-[100px] xl:px-[150px] 2xl:px-[200px];
 }
 
 .btn_blue {
@@ -20,13 +20,18 @@ body {
   }
 }
 
-.no-scrollbar::-webkit-scrollbar {
+.mp {
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
+/* .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
 
 .no-scrollbar {
   -ms-overflow-style: none; 
   scrollbar-width: none;
-}
+} */
 
 
