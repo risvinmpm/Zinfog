@@ -5,8 +5,8 @@ import Image from "next/image";
 import Button from "../common/Button";
 import { TypewriterEffect } from "../Ui/typewriter-effect";
 
-import banner from "@/public/banner.png";
-import scroll from "@/public/scroll.png";
+import banner from "../../public/banner.png";
+import scroll from "../../public/scroll.png";
 
 const Hero = () => {
   const words = [

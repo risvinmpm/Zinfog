@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
 
-import partners from '@/public/partners.png';
+import partners from '../../public/partners.png';
 
 const Brand = () => {
   return (

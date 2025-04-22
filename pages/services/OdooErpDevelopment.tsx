@@ -1,27 +1,27 @@
-"use cleint";
+"use client";
 
 import React from "react";
+import { Navbar } from "../../components/layout/Navbar";
+import Footer from "../../components/layout/Footer";
 
 const OdooErpDevelopment = () => {
   return (
     <>
-      {/* <div
-        style={{
-          backgroundColor: "rgb(27, 29, 50)",
-          backgroundImage: `url('/banner_bg.png')`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          height: "100vh",
-        }}
-      >
-        <p className="text-white">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
-          aliquam obcaecati fugit commodi excepturi autem eius temporibus
-          veritatis non dolorem, eaque voluptates officiis necessitatibus eum
-          cumque sequi quae nulla odit!
-        </p>
-      </div> */}
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate quos commodi quisquam ea animi eos delectus, vel repellendus voluptas fugit modi aliquam aut asperiores dolorum recusandae neque corporis consequatur debitis.
+      <Navbar />
+      <div className="relative h-screen bg-[url('/banner_bg.png')] bg-cover bg-center">
+        <div className="absolute inset-0 bg-opacity-60 flex items-center justify-center px-4">
+          <div className="main-padding">
+            <p className="text-white text-xl text-center">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
+              aliquam obcaecati fugit commodi excepturi autem eius temporibus
+              veritatis non dolorem, eaque voluptates officiis necessitatibus
+              eum cumque sequi quae nulla odit!
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <Footer />
     </>
   );
 };
