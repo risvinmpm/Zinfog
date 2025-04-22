@@ -124,7 +124,7 @@ const Help: React.FC = () => {
       <hr className="border border-gray-300" />
 
       {/* Services Section */}
-      <div className="grid lg:grid-cols-5 gap-10 py-30">
+      <div className="grid lg:grid-cols-5 gap-10 py-10 md:py-16 lg:py-30">
         {/* Left Column: All service content */}
         <div className="col-span-3 flex flex-col gap-14">
           {services.map((service, index) => (

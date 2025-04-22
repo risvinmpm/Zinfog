@@ -9,7 +9,7 @@ import Index from './Index'
 
 const Service = () => {
   return (
-    <div>
+    <div className='main-padding'>
         <Index />
         <OdooErpDevelopment />
         <MobileAppDevelopment />
