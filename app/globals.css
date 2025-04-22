@@ -7,7 +7,7 @@ body {
 }
 
 .main-padding {
-  @apply px-5 lg:px-[100px] xl:px-[150px] 2xl:px-[200px];
+  @apply px-5 lg:px-[50px] xl:px-[100px] 2xl:px-[200px];
 }
 
 .btn_blue {
@@ -19,19 +19,5 @@ body {
     word-spacing: 0.1em;
   }
 }
-
-.mp {
-  margin: 0px !important;
-  padding: 0px !important;
-}
-
-/* .no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-
-.no-scrollbar {
-  -ms-overflow-style: none; 
-  scrollbar-width: none;
-} */
 
 

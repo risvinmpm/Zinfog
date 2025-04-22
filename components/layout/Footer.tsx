@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
-import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter } from "react-icons/fa";
+import { AiFillInstagram } from "react-icons/ai";
+import { FaFacebookF, FaLinkedinIn, FaTwitter } from "react-icons/fa";
 
 
 const Footer = () => {
@@ -17,7 +18,7 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: <FaInstagram />, href: "#", label: "Instagram" },
+    { icon: <AiFillInstagram />, href: "#", label: "Instagram" },
     { icon: <FaTwitter />, href: "#", label: "Twitter" },
     { icon: <FaFacebookF />, href: "#", label: "Facebook" },
     { icon: <FaLinkedinIn />, href: "#", label: "Linkedin" },
