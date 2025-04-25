@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/autoplay";
+import Title from "../../common/Title";
 
 type TestimonialItemProps = {
   rating: number;
@@ -11,7 +12,6 @@ type TestimonialItemProps = {
   name: string;
 };
 
-// Component for rendering each testimonial
 const TestimonialItem: React.FC<TestimonialItemProps> = ({
   rating,
   comment,
@@ -38,8 +38,9 @@ const TestimonialItem: React.FC<TestimonialItemProps> = ({
   );
 };
 
-// Main component for testimonial section
 const ChooseTestimonials: React.FC = () => {
+  const headerItems = ["Why you choose us", "03"];
+
   const testimonials: TestimonialItemProps[] = [
     {
       rating: 5.0,
@@ -63,9 +64,17 @@ const ChooseTestimonials: React.FC = () => {
 
   return (
     <div className="main-padding py-5 lg:py-10 xl:py-20 bg-[#131321]">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {/* Header */}
+      <div className="text-center mb-4">
+        <Title items={headerItems} />
+      </div>
+
+      {/* Divider */}
+      <hr className="border border-gray-300 mb-6 lg:mb-10" />
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 py-5 lg:py-10">
         <div>
-          <h1 className="text-4xl font-semibold text-[#D5D5D5] mb-6 leading-snug max-w-xs">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-[#D5D5D5] mb-6 leading-snug max-w-xs">
             Our customers become our friends
           </h1>
         </div>
