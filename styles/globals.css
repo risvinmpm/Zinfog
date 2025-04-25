@@ -18,6 +18,21 @@ body {
   .word-spacing-custom {
     word-spacing: 0.1em;
   }
+  .frosted-glass {
+    background: linear-gradient(
+        139.63deg,
+        rgba(255, 255, 255, 0.05) 1.7%,
+        rgba(0, 0, 0, 0) 97.81%
+      ),
+      rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+  .bg-gradient-image {
+    background-image: linear-gradient(0deg, #00A19D, #00A19D);
+    background-size: cover;
+    background-position: center;
+  }
 }
 
 
