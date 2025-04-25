@@ -33,6 +33,9 @@ body {
     background-size: cover;
     background-position: center;
   }
+  .project-gradient {
+        background: linear-gradient(100.19deg, #832D6C 15.58%, #AB5895 71.69%, #D079B9 100%);
+  }
 }
 
 
