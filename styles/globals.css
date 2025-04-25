@@ -33,6 +33,13 @@ body {
     background-size: cover;
     background-position: center;
   }
+  .project-gradient {
+        background: linear-gradient(100.19deg, #832D6C 15.58%, #AB5895 71.69%, #D079B9 100%);
+  }
+  .mob-project {
+    background: linear-gradient(278.22deg, rgb(243, 98, 108) 0%, rgb(199, 30, 79) 102.4%);
+    backdrop-filter: blur(200px);
+  }
 }
 
 

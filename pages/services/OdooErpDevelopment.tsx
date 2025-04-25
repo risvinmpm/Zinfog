@@ -9,6 +9,8 @@ import Infinite  from "../../components/main/odooerpdev/Infinite";
 import ChooseUs from "../../components/main/odooerpdev/ChooseUs";
 import ChooseTestimonials from "../../components/main/odooerpdev/ChooseTestimonials";
 import Process from "../../components/main/odooerpdev/Process";
+import Project from "../../components/main/odooerpdev/Project";
+import Enquiry from "../../components/main/Enquiry";
 
 const OdooErpDevelopment = () => {
   return (
@@ -21,6 +23,8 @@ const OdooErpDevelopment = () => {
         <ChooseUs />
         <ChooseTestimonials />
         <Process />
+        <Project />
+        <div className="pt-7 lg:pt-15 xl:pt-30"><Enquiry /></div>
       </main>
       <Footer />
     </>
