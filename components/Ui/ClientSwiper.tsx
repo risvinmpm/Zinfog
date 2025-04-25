@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
-import { Autoplay, Pagination } from "swiper/modules";
+import { Autoplay } from "swiper/modules";
 
 interface Testimonial {
   name: string;
@@ -33,7 +33,7 @@ export default function ClientSwiper({
       {testimonials.map((item, index) => (
         <SwiperSlide key={index}>
           <div className="p-6 rounded-2xl shadow-md h-full flex flex-col justify-between text-center max-w-xl mx-auto">
-            <p className="text-gray-50 mb-4">"{item.message}"</p>
+            <p className="text-gray-50 mb-4">&quot;{item.message}&quot;</p>
             <div>
               <h4 className="font-bold text-lg">{item.name}</h4>
               <p className="text-sm text-gray-50">{item.role}</p>
