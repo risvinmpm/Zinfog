@@ -29,17 +29,29 @@ body {
     -webkit-backdrop-filter: blur(20px);
   }
   .bg-gradient-image {
-    background-image: linear-gradient(0deg, #00A19D, #00A19D);
+    background-image: linear-gradient(0deg, #00a19d, #00a19d);
     background-size: cover;
     background-position: center;
   }
   .project-gradient {
-        background: linear-gradient(100.19deg, #832D6C 15.58%, #AB5895 71.69%, #D079B9 100%);
+    background: linear-gradient(
+      100.19deg,
+      #832d6c 15.58%,
+      #ab5895 71.69%,
+      #d079b9 100%
+    );
   }
   .mob-project {
-    background: linear-gradient(278.22deg, rgb(243, 98, 108) 0%, rgb(199, 30, 79) 102.4%);
+    background: linear-gradient(
+      278.22deg,
+      rgb(243, 98, 108) 0%,
+      rgb(199, 30, 79) 102.4%
+    );
     backdrop-filter: blur(200px);
   }
+  .web-project {
+    background: rgb(94, 6, 207);
+    backdrop-filter: blur(200px);
+    visibility: visible;
+  }
 }
-
-
