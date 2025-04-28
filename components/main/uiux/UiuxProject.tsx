@@ -21,7 +21,7 @@ const UiuxProject = () => {
         },
     ];
     return (
-        <div className="web-project w-full h-full py-4 lg:py-8 xl:py-16">
+        <div className="uiux-bg w-full h-full py-4 lg:py-8 xl:py-16">
             <div className="main-padding">
                 {/* Section Title */}
                 <div className="text-center mb-5">
