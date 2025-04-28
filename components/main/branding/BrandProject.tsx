@@ -3,7 +3,7 @@ import Title from '../../common/Title';
 import Image from 'next/image';
 import Button from '../../common/Button';
 
-const WebProject = () => {
+const BrandProject = () => {
     const headerItems = ["Projects", "05"];
 
     const projects = [
@@ -21,7 +21,7 @@ const WebProject = () => {
         },
     ];
     return (
-        <div className="web-project w-full h-full py-4 lg:py-8 xl:py-16">
+        <div className="brand-bg w-full h-full py-4 lg:py-8 xl:py-16">
             <div className="main-padding">
                 {/* Section Title */}
                 <div className="text-center mb-5">
@@ -73,4 +73,4 @@ const WebProject = () => {
     )
 }
 
-export default WebProject
+export default BrandProject
