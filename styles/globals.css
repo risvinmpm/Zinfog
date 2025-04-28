@@ -54,4 +54,13 @@ body {
     backdrop-filter: blur(200px);
     visibility: visible;
   }
+  .brand-bg {
+    background: linear-gradient(
+      278.22deg,
+      rgb(72, 85, 99) 0%,
+      rgb(41, 50, 60) 102.4%
+    );
+    backdrop-filter: blur(200px);
+    visibility: visible;
+  }
 }
