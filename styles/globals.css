@@ -72,4 +72,7 @@ body {
     backdrop-filter: blur(200px);
     visibility: visible;
   }
+  .ecommerce-bg {
+    background: linear-gradient(285.94deg, #fb0d6ae3 -4.32%, #f28400bd 104.73%);
+  }
 }
