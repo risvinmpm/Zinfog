@@ -1,32 +1,85 @@
+'use client';
+
 import Image from 'next/image';
-import React from 'react';
+import React, { useState } from 'react';
+import 'react-phone-input-2/lib/style.css';
+import PhoneNumberField from '../../Ui/PhoneNumberField';
+import SuccessPopup from '../../Ui/SuccessPopup';
 
 const Banner = () => {
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        phone: '',
+        company: '',
+        requirement: '',
+    });
+
+    const [errors, setErrors] = useState({
+        name: '',
+        email: '',
+        phone: '',
+        company: '',
+    });
+
+    const [showPopup, setShowPopup] = useState(false);
+
+    const handleChange = (field: string, value: string) => {
+        setFormData((prev) => ({ ...prev, [field]: value }));
+        setErrors((prev) => ({ ...prev, [field]: '' }));
+    };
+
+    const validateForm = () => {
+        const newErrors: any = {};
+
+        if (!formData.name.trim()) newErrors.name = 'Name is required.';
+        if (!formData.email.trim()) newErrors.email = 'Email is required.';
+        if (!formData.phone.trim()) newErrors.phone = 'Phone number is required.';
+        if (!formData.company.trim()) newErrors.company = 'Company is required.';
+
+        setErrors(newErrors);
+        return Object.keys(newErrors).length === 0;
+    };
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        if (validateForm()) {
+            console.log('Form submitted:', formData);
+            setShowPopup(true);
+            setFormData({
+                name: '',
+                email: '',
+                phone: '',
+                company: '',
+                requirement: '',
+            });
+        }
+    };
+
+    const handleRequestDemoClick = () => {
+        if (!validateForm()) return;
+        setShowPopup(true);
+    };
+
     return (
         <div
-            className="relative bg-cover bg-no-repeat bg-center mt-10 lg:mt-20 py-10 main-padding"
+            className="relative bg-cover bg-no-repeat bg-center mt-10 lg:mt-20 py-16 main-padding"
             style={{ backgroundImage: 'url("/mobileapps.png")' }}
         >
-            {/* Gradient Overlay */}
+            {/* Overlays */}
             <div
                 className="absolute inset-0 z-0 opacity-90"
                 style={{
-                    background:
-                        'linear-gradient(285.94deg, #fb0d6ae3 -4.32%, #f28400bd 104.73%)',
+                    background: 'linear-gradient(285.94deg, #fb0d6ae3 -4.32%, #f28400bd 104.73%)',
                 }}
             />
-
-            {/* Pattern Overlay */}
             <div
                 className="absolute inset-0 z-0 bg-center bg-no-repeat bg-cover"
-                style={{
-                    backgroundImage: 'url("/count-bg.png")',
-                }}
+                style={{ backgroundImage: 'url("/count-bg.png")' }}
             />
 
-            {/* Content */}
-            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-screen-xl mx-auto">
-                {/* Text & Image */}
+            <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-screen-xl mx-auto">
+                {/* Left Section */}
                 <div className="flex flex-col justify-center space-y-6">
                     <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-snug">
                         E-Commerce App Development Services for Your Store
@@ -34,108 +87,114 @@ const Banner = () => {
                     <p className="text-base md:text-lg max-w-md">
                         Looking for an e-commerce app to enhance sales? You&apos;re in the right spot.
                     </p>
-                    <div>
-                        <Image
-                            src="/awards.png"
-                            width={300}
-                            height={300}
-                            alt="Awards"
-                            className="w-64 md:w-80"
-                        />
-                    </div>
+                    <Image
+                        src="/awards.png"
+                        width={300}
+                        height={300}
+                        alt="Awards"
+                        className="w-64 md:w-80"
+                    />
                 </div>
 
-                {/* Form */}
-                <div className="bg-[#282A3D] rounded-lg p-6 md:p-10 shadow-lg">
-                    <form>
-                        <h2 className="text-lg font-semibold mb-1">
+                {/* Right Form Section */}
+                <div className="bg-[#282A3D] rounded-lg p-6 md:p-10 shadow-lg max-w-md mx-auto">
+                    <form onSubmit={handleSubmit}>
+                        <h2 className="text-xl font-bold mb-3 text-center text-white">
                             Get in touch with us for a free demo
                         </h2>
-                        <p className="text-sm mb-6">
+                        <p className="text-sm mb-6 text-center text-white">
                             and know more about what magic we can do to build your firm better.
                         </p>
 
+                        {/* Name */}
                         <div>
-                            <label htmlFor="first-name" className="block text-sm font-medium text-gray-700">
-                                First Name
+                            <label htmlFor="name" className="block text-sm font-medium text-white">
+                                Name
                             </label>
                             <input
-                                id="first-name"
-                                name="first-name"
+                                id="name"
                                 type="text"
-                                autoComplete="given-name"
-                                className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:outline-indigo-600"
+                                value={formData.name}
+                                onChange={(e) => handleChange('name', e.target.value)}
+                                className="mt-1 block w-full rounded-md px-3 py-2 border border-[#3B3E54] shadow-sm bg-[#2E3142] text-white focus:outline-none"
                             />
+                            {errors.name && <p className="text-red-400 text-sm mt-1">{errors.name}</p>}
                         </div>
-                        <div className="sm:col-span-2">
-                            <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                                Email Address
+
+                        {/* Email */}
+                        <div className="mt-4">
+                            <label htmlFor="email" className="block text-sm font-medium text-white">
+                                Email
                             </label>
                             <input
                                 id="email"
-                                name="email"
                                 type="email"
-                                autoComplete="email"
-                                className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:outline-indigo-600"
+                                value={formData.email}
+                                onChange={(e) => handleChange('email', e.target.value)}
+                                className="mt-1 block w-full rounded-md border border-[#3B3E54] bg-[#2E3142] px-3 py-2 shadow-sm text-white focus:outline-none"
                             />
+                            {errors.email && <p className="text-red-400 text-sm mt-1">{errors.email}</p>}
                         </div>
 
-                        <div>
-                            <label htmlFor="country" className="block text-sm font-medium text-gray-700">
-                                Country
-                            </label>
-                            <select
-                                id="country"
-                                name="country"
-                                autoComplete="country"
-                                className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:outline-indigo-600"
-                            >
-                                <option>United States</option>
-                                <option>Canada</option>
-                                <option>Mexico</option>
-                            </select>
+                        {/* Phone */}
+                        <div className="mt-4">
+                            <PhoneNumberField
+                                value={formData.phone}
+                                onChange={(value) => handleChange('phone', value)}
+                            />
+                            {errors.phone && <p className="text-red-400 text-sm mt-1">{errors.phone}</p>}
                         </div>
 
-                        <div className="sm:col-span-2">
-                            <label htmlFor="street-address" className="block text-sm font-medium text-gray-700">
-                                Street Address
+                        {/* Company */}
+                        <div className="mt-4">
+                            <label htmlFor="company" className="block text-sm font-medium text-white">
+                                Company
                             </label>
                             <input
-                                id="street-address"
-                                name="street-address"
+                                id="company"
                                 type="text"
-                                autoComplete="street-address"
-                                className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:outline-indigo-600"
+                                value={formData.company}
+                                onChange={(e) => handleChange('company', e.target.value)}
+                                className="mt-1 block w-full rounded-md border border-[#3B3E54] bg-[#2E3142] px-3 py-2 shadow-sm text-white focus:outline-none"
                             />
+                            {errors.company && <p className="text-red-400 text-sm mt-1">{errors.company}</p>}
                         </div>
 
-                        <div>
-                            <label htmlFor="city" className="block text-sm font-medium text-gray-700">
-                                City
+                        {/* Requirement (Optional) */}
+                        <div className="mt-4">
+                            <label htmlFor="requirement" className="block text-sm font-medium text-white">
+                                Requirement (optional)
                             </label>
                             <input
-                                id="city"
-                                name="city"
+                                id="requirement"
                                 type="text"
-                                autoComplete="address-level2"
-                                className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:outline-indigo-600"
+                                value={formData.requirement}
+                                onChange={(e) => handleChange('requirement', e.target.value)}
+                                className="mt-1 block w-full rounded-md border border-[#3B3E54] bg-[#2E3142] px-3 py-2 shadow-sm text-white focus:outline-none"
                             />
                         </div>
 
+                        {/* Buttons */}
                         <div className="mt-6 flex justify-end gap-4">
-                            <button type="button" className="text-sm font-semibold text-gray-700">
-                                Cancel
+                            <button
+                                type="button"
+                                onClick={handleRequestDemoClick}
+                                className="w-full text-sm border-2 border-[#00A19D] text-[#00A19D] font-semibold"
+                            >
+                                Request a demo
                             </button>
                             <button
                                 type="submit"
-                                className="bg-indigo-600 text-white text-sm font-semibold px-4 py-2 rounded-md hover:bg-indigo-500 focus:outline-indigo-600"
+                                className="w-full bg-[#00A19D] text-white text-sm font-semibold px-4 py-3 focus:outline-none hover:bg-gray-700 transition-all duration-300 ease-in-out"
                             >
-                                Save
+                                Schedule a call
                             </button>
                         </div>
                     </form>
                 </div>
             </div>
+
+            {showPopup && <SuccessPopup onClose={() => setShowPopup(false)} />}
         </div>
     );
 };
