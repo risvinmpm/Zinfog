@@ -63,4 +63,13 @@ body {
     backdrop-filter: blur(200px);
     visibility: visible;
   }
+  .uiux-bg {
+    background: linear-gradient(
+      278.4deg,
+      rgb(112, 225, 245) -45.12%,
+      rgb(237, 138, 8) 102.4%
+    );
+    backdrop-filter: blur(200px);
+    visibility: visible;
+  }
 }
