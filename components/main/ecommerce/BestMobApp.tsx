@@ -21,8 +21,7 @@ const BestMobApp: React.FC = () => {
             title: 'Enhanced User-Interface',
             description:
                 `An ecommerce app's success relies on an intuitive user interface, simplifying navigation and checkout with seamless payment gateway integration. A visually appealing design with concise information ensures a seamless shopping experience, driving customer engagement and loyalty.`,
-            points: [
-            ],
+            points: [],
         },
     ]
 
@@ -36,9 +35,8 @@ const BestMobApp: React.FC = () => {
                 {sections.map((section, index) => (
                     <div
                         key={index}
-                        className={`flex flex-col md:flex-row ${
-                            !section.imageFirst ? 'md:flex-row-reverse' : ''
-                        } items-center gap-8`}
+                        className={`flex flex-col md:flex-row ${!section.imageFirst ? 'md:flex-row-reverse' : ''
+                            } items-center gap-8`}
                     >
                         <div className="w-full lg:w-1/2">
                             <Image
@@ -49,12 +47,19 @@ const BestMobApp: React.FC = () => {
                                 className="w-full h-auto mx-auto"
                             />
                         </div>
+
                         <div className="w-full lg:w-1/2 text-white space-y-4">
                             <h6 className="text-lg font-semibold">{section.title}</h6>
-                            <p className='text-[#ABABAB]'>{section.description}</p>
-                            <ul className="list-disc list-inside space-y-1 text-[#ABABAB]">
+                            <p className="text-[#ABABAB]">{section.description}</p>
+
+                            <ul className="space-y-2">
                                 {section.points.map((point, i) => (
-                                    <li key={i}>{point}</li>
+                                    <li
+                                        key={i}
+                                        className="relative pl-6 text-[#ABABAB] before:content-['•'] before:absolute before:left-0 before:top-[-23px] before:text-blue-500 before:text-6xl leading-snug"
+                                    >
+                                        {point}
+                                    </li>
                                 ))}
                             </ul>
                         </div>
