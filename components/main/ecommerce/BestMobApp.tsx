@@ -56,7 +56,7 @@ const BestMobApp: React.FC = () => {
                                 {section.points.map((point, i) => (
                                     <li
                                         key={i}
-                                        className="relative pl-6 text-[#ABABAB] before:content-['•'] before:absolute before:left-0 before:top-[-23px] before:text-blue-500 before:text-6xl leading-snug"
+                                        className="relative pl-6 text-[#ABABAB] before:content-['•'] before:absolute before:left-0 before:top-[-23px] before:text-blue-600 before:text-6xl leading-snug"
                                     >
                                         {point}
                                     </li>
