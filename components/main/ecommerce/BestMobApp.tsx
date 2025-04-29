@@ -51,8 +51,8 @@ const BestMobApp: React.FC = () => {
                         </div>
                         <div className="w-full lg:w-1/2 text-white space-y-4">
                             <h6 className="text-lg font-semibold">{section.title}</h6>
-                            <p>{section.description}</p>
-                            <ul className="list-disc list-inside space-y-1">
+                            <p className='text-[#ABABAB]'>{section.description}</p>
+                            <ul className="list-disc list-inside space-y-1 text-[#ABABAB]">
                                 {section.points.map((point, i) => (
                                     <li key={i}>{point}</li>
                                 ))}
