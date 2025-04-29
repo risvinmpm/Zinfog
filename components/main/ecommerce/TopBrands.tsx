@@ -18,7 +18,7 @@ const TopBrands: React.FC = () => {
     const brandRows = Brands(brands, 4)
 
     return (
-        <div className="main-padding py-20">
+        <div className="main-padding py-20 bg-[#131321]">
             <h1 className="text-center text-2xl md:text-3xl font-semibold mb-10">
                 Top brands choose us for their work
             </h1>

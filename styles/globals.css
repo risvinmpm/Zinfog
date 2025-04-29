@@ -14,6 +14,10 @@ body {
   @apply bg-blue-500 px-4 py-2 text-white;
 }
 
+.btn_light_blue {
+  @apply bg-[#00A19D] px-4 py-2 text-white rounded-md
+}
+
 @layer utilities {
   .word-spacing-custom {
     word-spacing: 0.1em;
@@ -74,5 +78,14 @@ body {
   }
   .ecommerce-bg {
     background: linear-gradient(285.94deg, #fb0d6ae3 -4.32%, #f28400bd 104.73%);
+  }
+  .card-bg {
+    background: linear-gradient(
+        139.63deg,
+        rgba(255, 255, 255, 0.05) 1.7%,
+        rgba(0, 0, 0, 0) 97.81%
+      ),
+      rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
   }
 }
