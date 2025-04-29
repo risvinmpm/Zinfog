@@ -5,6 +5,7 @@ import Banner from '../../components/main/ecommerce/Banner'
 import TopBrands from '../../components/main/ecommerce/TopBrands'
 import WayOfWorking from '../../components/main/ecommerce/WayOfWorking'
 import BestMobApp from '../../components/main/ecommerce/BestMobApp'
+import Pathway from '../../components/main/ecommerce/Pathway'
 
 const Ecommerce = () => {
   return (
@@ -15,6 +16,7 @@ const Ecommerce = () => {
         <TopBrands />
         <WayOfWorking />
         <BestMobApp />
+        <Pathway />
       </main>
       <Footer />
     </>
