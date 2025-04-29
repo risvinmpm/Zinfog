@@ -24,7 +24,7 @@ const WayOfWorking: React.FC = () => {
         <div className="main-padding py-10 lg:py-20 xl:py-30 relative overflow-hidden">
            
             <div
-                className="absolute inset-0 z-0 bg-no-repeat bg-cover"
+                className="absolute inset-0 z-0 bg-top bg-no-repeat bg-cover"
                 style={{ backgroundImage: 'url("/mobileappsimg.png")' }}
             />
 
