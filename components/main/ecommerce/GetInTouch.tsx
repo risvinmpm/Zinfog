@@ -5,6 +5,7 @@ import 'react-phone-input-2/lib/style.css';
 import PhoneNumberField from '../../Ui/PhoneNumberField';
 import SuccessPopup from '../../Ui/SuccessPopup';
 import Button from '../../common/Button';
+import Image from 'next/image';
 
 const GetInTouch = () => {
     const [formData, setFormData] = useState({
@@ -176,6 +177,36 @@ const GetInTouch = () => {
                                 </div>
                             </form>
                         </div>
+                    </div>
+                </div>
+                {/* Newsletter Signup */}
+                <div className="mt-10">
+                    <h4 className="mb-5 text-lg font-semibold">
+                        SIGN TO OUR NEWSLETTER:
+                    </h4>
+                    <div className="relative w-fit">
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="your@email.com"
+                            className="placeholder:text-gray-400 placeholder:text-3xl text-base border-b-2 border-gray-400 bg-transparent outline-none w-[280px] text-white py-3 pr-12 ps-1"
+                        />
+                        <Image
+                            src="/arrow.png"
+                            width={30}
+                            height={30}
+                            alt="Arrow"
+                            className="absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer"
+                        />
+                    </div>
+
+                    {/* Terms & Privacy Checkbox */}
+                    <div className="flex items-start mt-3">
+                        <input type="checkbox" id="checkbox" className="mt-1" />
+                        <label htmlFor="checkbox" className="ps-3 text-gray-500 text-sm">
+                            I have read & accept the:{" "}
+                            <span className="font-bold text-white">terms & privacy</span>
+                        </label>
                     </div>
                 </div>
             </div>
