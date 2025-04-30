@@ -7,6 +7,7 @@ import WayOfWorking from '../../components/main/ecommerce/WayOfWorking'
 import BestMobApp from '../../components/main/ecommerce/BestMobApp'
 import Pathway from '../../components/main/ecommerce/Pathway'
 import Faqs from '../../components/main/ecommerce/Faqs'
+import GetInTouch from '../../components/main/ecommerce/GetInTouch'
 
 const Ecommerce = () => {
   return (
@@ -19,6 +20,7 @@ const Ecommerce = () => {
         <BestMobApp />
         <Pathway />
         <Faqs />
+        <GetInTouch />
       </main>
       <Footer />
     </>
