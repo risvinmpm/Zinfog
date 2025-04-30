@@ -18,7 +18,7 @@ const Product = () => {
         <Myzili />
         <Lanoza />
         <Zsuite />
-        <div className='bg-[#17182b] py-30'><Enquiry /></div>
+        <div className='bg-[#17182b] pt-30'><Enquiry /></div>
       </main>
       <Footer />
     </>

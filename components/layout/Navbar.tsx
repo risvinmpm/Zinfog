@@ -50,16 +50,18 @@ export function Navbar({ className }: { className?: string }) {
               onMouseEnter={() => handleMouseEnter("Services")}
               onMouseLeave={handleMouseLeave}
             >
-              <MenuItem setActive={setActive} active={active} item="Services">
-                <div className="flex flex-col space-y-4 text-sm">
-                  <HoveredLink href="/services/OdooErpDevelopment">Odoo erp development</HoveredLink>
-                  <HoveredLink href="/services/MobileAppDevelopment">Mobile app development</HoveredLink>
-                  <HoveredLink href="/services/WebsiteDevelopment">Website development</HoveredLink>
-                  <HoveredLink href="/services/Branding">Branding</HoveredLink>
-                  <HoveredLink href="/services/UiUxDesign">UIUX Design</HoveredLink>
-                  <HoveredLink href="/services/Ecommerce">Ecommerce</HoveredLink>
-                </div>
-              </MenuItem>
+              <HoveredLink href="/services/Service">
+                <MenuItem setActive={setActive} active={active} item="Services">
+                  <div className="flex flex-col space-y-4 text-sm">
+                    <HoveredLink href="/services/OdooErpDevelopment">Odoo erp development</HoveredLink>
+                    <HoveredLink href="/services/MobileAppDevelopment">Mobile app development</HoveredLink>
+                    <HoveredLink href="/services/WebsiteDevelopment">Website development</HoveredLink>
+                    <HoveredLink href="/services/Branding">Branding</HoveredLink>
+                    <HoveredLink href="/services/UiUxDesign">UIUX Design</HoveredLink>
+                    <HoveredLink href="/services/Ecommerce">Ecommerce</HoveredLink>
+                  </div>
+                </MenuItem>
+              </HoveredLink>
             </div>
 
             {/* Products Menu */}
