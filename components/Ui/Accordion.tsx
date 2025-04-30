@@ -1,4 +1,3 @@
-// components/Accordion.tsx
 import React, { useState } from 'react';
 
 type AccordionItem = {
