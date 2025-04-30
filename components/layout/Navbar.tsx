@@ -50,16 +50,18 @@ export function Navbar({ className }: { className?: string }) {
               onMouseEnter={() => handleMouseEnter("Services")}
               onMouseLeave={handleMouseLeave}
             >
-              <MenuItem setActive={setActive} active={active} item="Services">
-                <div className="flex flex-col space-y-4 text-sm">
-                  <HoveredLink href="/services/OdooErpDevelopment">Odoo erp development</HoveredLink>
-                  <HoveredLink href="/services/MobileAppDevelopment">Mobile app development</HoveredLink>
-                  <HoveredLink href="/services/WebsiteDevelopment">Website development</HoveredLink>
-                  <HoveredLink href="/services/Branding">Branding</HoveredLink>
-                  <HoveredLink href="/services/UiUxDesign">UIUX Design</HoveredLink>
-                  <HoveredLink href="/services/Ecommerce">Ecommerce</HoveredLink>
-                </div>
-              </MenuItem>
+              <HoveredLink href="/services/Service">
+                <MenuItem setActive={setActive} active={active} item="Services">
+                  <div className="flex flex-col space-y-4 text-sm">
+                    <HoveredLink href="/services/OdooErpDevelopment">Odoo erp development</HoveredLink>
+                    <HoveredLink href="/services/MobileAppDevelopment">Mobile app development</HoveredLink>
+                    <HoveredLink href="/services/WebsiteDevelopment">Website development</HoveredLink>
+                    <HoveredLink href="/services/Branding">Branding</HoveredLink>
+                    <HoveredLink href="/services/UiUxDesign">UIUX Design</HoveredLink>
+                    <HoveredLink href="/services/Ecommerce">Ecommerce</HoveredLink>
+                  </div>
+                </MenuItem>
+              </HoveredLink>
             </div>
 
             {/* Products Menu */}
@@ -67,34 +69,37 @@ export function Navbar({ className }: { className?: string }) {
               onMouseEnter={() => handleMouseEnter("Products")}
               onMouseLeave={handleMouseLeave}
             >
-              <MenuItem setActive={setActive} active={active} item="Products">
-                <div className="text-sm grid grid-cols-2 gap-10 p-4">
-                  <ProductItem
-                    title="Goldzin"
-                    href="/product/Product#goldzin"
-                    src="https://assets.aceternity.com/demos/algochurn.webp"
-                    description="Prepare for tech interviews like never before."
-                  />
-                  <ProductItem
-                    title="Myzili"
-                    href="/product/Product#myzili"
-                    src="https://assets.aceternity.com/demos/tailwindmasterkit.webp"
-                    description="Production ready Tailwind css components for your next project"
-                  />
-                  <ProductItem
-                    title="Lanoza"
-                    href="/product/Product#lanoza"
-                    src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.51.31%E2%80%AFPM.png"
-                    description="Never write from scratch again. Go from idea to blog in minutes."
-                  />
-                  <ProductItem
-                    title="Zsuite"
-                    href="/product/Product#zsuite"
-                    src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.47.07%E2%80%AFPM.png"
-                    description="Respond to government RFPs, RFIs and RFQs 10x faster using AI"
-                  />
-                </div>
-              </MenuItem>
+              {/* Products with full link on item */}
+              <HoveredLink href="/product/Product">
+                <MenuItem setActive={setActive} active={active} item="Products">
+                  <div className="text-sm grid grid-cols-2 gap-10 p-4">
+                    <ProductItem
+                      title="Goldzin"
+                      href="/product/Product#goldzin"
+                      src="https://assets.aceternity.com/demos/algochurn.webp"
+                      description="Prepare for tech interviews like never before."
+                    />
+                    <ProductItem
+                      title="Myzili"
+                      href="/product/Product#myzili"
+                      src="https://assets.aceternity.com/demos/tailwindmasterkit.webp"
+                      description="Production ready Tailwind css components for your next project"
+                    />
+                    <ProductItem
+                      title="Lanoza"
+                      href="/product/Product#lanoza"
+                      src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.51.31%E2%80%AFPM.png"
+                      description="Never write from scratch again. Go from idea to blog in minutes."
+                    />
+                    <ProductItem
+                      title="Zsuite"
+                      href="/product/Product#zsuite"
+                      src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.47.07%E2%80%AFPM.png"
+                      description="Respond to government RFPs, RFIs and RFQs 10x faster using AI"
+                    />
+                  </div>
+                </MenuItem>
+              </HoveredLink>
             </div>
 
             {/* Other links */}
