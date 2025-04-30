@@ -18,14 +18,14 @@ const Accordion: React.FC<AccordionProps> = ({ items }) => {
   };
 
   return (
-    <div className="w-full mx-auto space-y-4">
+    <div className="w-full mx-auto">
       {items.map((item, index) => {
         const isOpen = index === activeIndex;
         return (
           <div key={index} className="border-0 border-b border-gray-500 overflow-hidden">
             <button
               onClick={() => toggle(index)}
-              className="w-full text-left py-4 flex justify-between items-center"
+              className="w-full text-left py-6 flex justify-between items-center"
             >
               <span className="font-medium">{item.title}</span>
               <span className="text-xl font-bold transition-transform">
