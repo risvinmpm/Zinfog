@@ -3,7 +3,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
-import Button from '../common/Button';
 
 type Tab = 'All' | 'Web development' | 'Branding' | 'ui/ux Design' | 'third party apps';
 
