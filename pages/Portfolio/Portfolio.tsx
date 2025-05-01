@@ -1,10 +1,21 @@
 import React from 'react'
+import { Navbar } from '../../components/layout/Navbar'
+import Footer from '../../components/layout/Footer'
+import Banner from '../../components/main/portfolio/Banner'
+import OurPortfolio from '../../components/main/portfolio/OurPortfolio'
+import Enquiry from '../../components/main/Enquiry'
 
 const Portfolio = () => {
   return (
-    <div className='main-padding'>
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo nulla neque ipsa? Necessitatibus excepturi impedit consequatur dolor dolore. Distinctio iusto nesciunt quia pariatur, nulla voluptatibus a est. Quia, voluptatum temporibus?
-    </div>
+    <>
+      <Navbar />
+      <main className='mt-20'>
+        <Banner />
+        <OurPortfolio />
+        <Enquiry />
+      </main>
+      <Footer />
+    </>
   )
 }
 

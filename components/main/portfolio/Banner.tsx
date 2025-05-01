@@ -1,0 +1,43 @@
+import React from 'react'
+import Button from '../../common/Button'
+import Image from 'next/image'
+
+const Banner = () => {
+    return (
+        <div className="w-full h-full py-10 lg:py-20 xl:py-30 bg-[rgb(27, 29, 50)] relative main-padding">
+            <div
+                className="absolute inset-0 z-0 bg-center bg-no-repeat bg-fill"
+                style={{ backgroundImage: 'url("/banner-bg.png")' }}
+            />
+            <div className="grid grid-cols-1 sm:grid-cols-5 items-center gap-10">
+                <div className="sm:col-span-3 flex flex-col justify-center h-full">
+                    <h1 className="text-3xl lg:text-5xl xl:text-6xl font-semibold max-w-xl">
+                        Creating world class digital solutions
+                    </h1>
+                    <p className="py-5 md:pt-10 pb-5 max-w-lg text-lg font-extralight">
+                        Keeping up with the pace digitally, Zinfog has developed World class digital solutions for your business.
+                    </p>
+                    <div><Button variant="btn_blue" title="Request a quote" type="button" /></div>
+                </div>
+                <div className="sm:col-span-2 flex flex-col items-center justify-center">
+                    <Image
+                        src="/portfolio_banner.png"
+                        width={400}
+                        height={400}
+                        alt="Portfolio Banner"
+                        className="w-full"
+                    />
+                    <Image
+                        src="/scroll.png"
+                        width={120}
+                        height={120}
+                        alt="Scroll Icon"
+                        className="mx-auto mt-4"
+                    />
+                </div>
+            </div>
+        </div>
+    )
+}
+
+export default Banner
