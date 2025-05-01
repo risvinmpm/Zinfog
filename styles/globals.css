@@ -15,7 +15,7 @@ body {
 }
 
 .btn_light_blue {
-  @apply bg-[#00A19D] px-4 py-2 text-white rounded-md
+  @apply bg-[#00A19D] px-4 py-2 text-white rounded-md;
 }
 
 @layer utilities {
@@ -87,5 +87,31 @@ body {
       ),
       rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(20px);
+  }
+  .tab-bg-1 {
+    background: linear-gradient(
+      143.28deg,
+      rgb(131, 45, 108) 28.78%,
+      rgb(208, 121, 185) 76.71%
+    );
+  }
+  .tab-bg-2 {
+    background: linear-gradient(322.76deg, #f3626c 23.51%, #c71e4f 80.32%);
+    padding: 30px;
+    backdrop-filter: blur(200px);
+  }
+  .tab-bg-3 {
+    background: linear-gradient(
+      278.4deg,
+      rgb(112, 225, 245) -45.12%,
+      rgb(237, 138, 8) 102.4%
+    );
+    backdrop-filter: blur(200px);
+    visibility: visible;
+  }
+  .tab-bg-4 {
+    background: linear-gradient(99.64deg, #5e06cf 0%, #954bf4 100.82%);
+    padding: 30px;
+    backdrop-filter: blur(200px);
   }
 }
