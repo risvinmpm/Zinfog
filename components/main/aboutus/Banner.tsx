@@ -1,0 +1,45 @@
+"use client"
+import Image from 'next/image'
+import React from 'react'
+import Button from '../../common/Button'
+import Brand from '../Brand'
+
+const Banner = () => {
+    return (
+        <section className='relative'>
+            <div
+                className="absolute inset-0 z-0 bg-center bg-no-repeat bg-fill"
+                style={{ backgroundImage: 'url("/banner-bg.png")' }}
+            />
+            <div className="mt-[100px] grid md:grid-cols-2 gap-10 items-center main-padding relative">
+                <div>
+                    <h1 className="text-4xl lg:text-5xl font-bold leading-tight">
+                        Want to know more about zinfog
+                    </h1>
+                    <p className="mt-6 text-lg text-gray-200">
+                        Zinfog codelabs is a firm that provides customized Odoo erp solutions according to the client’s needs. We also develop customized mobile applications.
+                    </p>
+                    <div className="mt-7">
+                        <Button type="button" variant="btn_blue" title="Enquire now" />
+                    </div>
+                </div>
+
+                <div className="relative flex justify-center items-center">
+                    <Image src="/teamz.png" alt="banner" width={500} height={500} />
+
+                    {/* Scroll Icon */}
+                    <Image
+                        src="/scroll.png"
+                        alt="scroll"
+                        width={120}
+                        height={120}
+                        className="absolute -bottom-16 left-2"
+                    />
+                </div>
+            </div>
+            <Brand />
+        </section>
+    )
+}
+
+export default Banner

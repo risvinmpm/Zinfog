@@ -3,7 +3,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
-import Button from '../common/Button';
 
 type Tab = 'All' | 'Web development' | 'Branding' | 'ui/ux Design' | 'third party apps';
 
@@ -93,7 +92,7 @@ const FilterTabs: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
           transition={{ duration: 0.3 }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 gap-3"
         >
           {filteredItems.map(item => (
             <motion.div
