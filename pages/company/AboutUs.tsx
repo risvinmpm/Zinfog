@@ -4,6 +4,8 @@ import Footer from "../../components/layout/Footer";
 import Banner from "../../components/main/aboutus/Banner";
 import AboutZinfog from "../../components/main/aboutus/AboutZinfog";
 import Mission from "../../components/main/aboutus/Mission";
+import WeHelped from "../../components/main/aboutus/WeHelped";
+import Partners from "../../components/main/aboutus/Partners";
 
 const AboutUs = () => {
   return (
@@ -13,6 +15,8 @@ const AboutUs = () => {
         <Banner />
         <AboutZinfog />
         <Mission />
+        <WeHelped />
+        <Partners />
       </main>
       <Footer />
     </>
