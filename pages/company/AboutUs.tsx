@@ -6,6 +6,7 @@ import AboutZinfog from "../../components/main/aboutus/AboutZinfog";
 import Mission from "../../components/main/aboutus/Mission";
 import WeHelped from "../../components/main/aboutus/WeHelped";
 import Partners from "../../components/main/aboutus/Partners";
+import OurTeam from "../../components/main/aboutus/OurTeam";
 
 const AboutUs = () => {
   return (
@@ -17,6 +18,7 @@ const AboutUs = () => {
         <Mission />
         <WeHelped />
         <Partners />
+        <OurTeam />
       </main>
       <Footer />
     </>
