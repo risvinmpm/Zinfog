@@ -13,7 +13,7 @@ const AboutZinfog = () => {
     return (
         <section className="relative main-padding">
             {/* Section Title */}
-            <div className="text-center mb-10">
+            <div className="text-center mb-5">
                 <Title items={headerItems} />
             </div>
 
@@ -26,7 +26,7 @@ const AboutZinfog = () => {
                     </h1>
                     <div className="pe-10 lg:pe-20 xl:pe-30">
                         {aboutParagraphs.map((paragraph, index) => (
-                            <p key={index} className="mt-6 text-lg font-extralight text-gray-200">
+                            <p key={index} className="mt-6 lg:text-lg font-extralight text-gray-200">
                                 {paragraph}
                             </p>
                         ))}
