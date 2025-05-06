@@ -1,8 +1,17 @@
 import React from 'react'
+import { Navbar } from '../../components/layout/Navbar'
+import Footer from '../../components/layout/Footer'
+import Banner from '../../components/main/career/Banner'
 
 const Career = () => {
   return (
-    <div>Career</div>
+    <>
+      <Navbar />
+      <main>
+        <Banner />
+      </main>
+      <Footer />
+    </>
   )
 }
 
