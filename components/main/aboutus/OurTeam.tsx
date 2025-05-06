@@ -18,10 +18,10 @@ const teamMembers: TeamMember[] = [
   { name: 'Anas', role: 'Developer', image: '/anas.png' },
   { name: 'Vivek Madhavan', role: 'Director', image: '/vivek-madhavan.png' },
   { name: 'Abdul Basith', role: 'Director', image: '/abdul-basith.png' },
-  { name: 'Sumayya', role: 'Functional Analyst', image: '/sumayya.png' },
-  { name: 'Sumayya', role: 'Functional Analyst', image: '/sumayya.png' },
-  { name: 'Sumayya', role: 'Functional Analyst', image: '/sumayya.png' },
-  { name: 'Sumayya', role: 'Functional Analyst', image: '/sumayya.png' },
+  { name: 'Sreelakshmi', role: 'HR', image: '/sreelakshmi.png' },
+  { name: 'Kavya', role: 'Accountant', image: '/kavya.png' },
+  { name: 'Athira', role: 'Odoo Developer', image: '/athira.png' },
+  { name: 'Vishnu', role: 'Odoo Developer', image: '/vishnu.png' },
 ];
 
 const ClientSwiper: React.FC = () => {
@@ -69,7 +69,7 @@ const ClientSwiper: React.FC = () => {
                       height={300}
                       className="object-cover w-full h-64 transition-transform duration-500 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-blue-600/50 text-white flex flex-col justify-center items-center px-4 py-3 transform translate-y-full group-hover:translate-y-0 transition-all duration-500 ease-in-out">
+                    <div className="absolute inset-0 bg-[#201333]/80 text-white flex flex-col justify-center items-center px-4 py-3 transform translate-y-full group-hover:translate-y-0 transition-all duration-500 ease-in-out">
                       <h3 className="text-lg font-semibold">{member.name}</h3>
                       <p className="text-sm opacity-90">{member.role}</p>
                     </div>

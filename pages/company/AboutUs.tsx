@@ -7,6 +7,8 @@ import Mission from "../../components/main/aboutus/Mission";
 import WeHelped from "../../components/main/aboutus/WeHelped";
 import Partners from "../../components/main/aboutus/Partners";
 import OurTeam from "../../components/main/aboutus/OurTeam";
+import Testimonials from "../../components/main/Testimonials";
+import Enquiry from "../../components/main/Enquiry";
 
 const AboutUs = () => {
   return (
@@ -19,6 +21,8 @@ const AboutUs = () => {
         <WeHelped />
         <Partners />
         <OurTeam />
+        <Testimonials />
+        <div className="pt-10 lg:pt-20 xl:pt-30"><Enquiry /></div>
       </main>
       <Footer />
     </>
