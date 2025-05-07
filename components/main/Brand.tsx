@@ -6,7 +6,7 @@ import partners from '../../public/partners.png';
 const Brand = () => {
   return (
     <section className="main-padding">
-      <h1 className="text-xl sm:text-2xl text-[#32E0F8] font-semibold mt-15 lg:mt-20">
+      <h1 className="text-xl md:text-2xl text-[#32E0F8] font-semibold mt-15 lg:mt-20">
         Top brands choose us for their work
       </h1>
       <div className="relative w-full mx-auto aspect-[15/1.5]">
