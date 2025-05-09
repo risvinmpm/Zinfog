@@ -83,7 +83,7 @@ const OurBlogs: React.FC = () => {
                   width={50}
                   height={50}
                   alt={blog.authorName}
-                  className="rounded-full object-cover"
+                  className="rounded-full w-14 h-14"
                 />
                 <div>
                   <p className="text-[#3B5CFF] font-semibold">{blog.authorName}</p>
