@@ -1,111 +1,93 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
 import Title from "../../common/Title";
-import Image from "next/image";
 import Link from "next/link";
+import FallbackImage from "../../common/FallbackImage"; // Adjust path if needed
 
-const blogData = [
-  {
-    id: 1,
-    title: "10 Essential Qualities to Look for in a Web Development Company",
-    description:
-      "Discover the 10 essential qualities to look for in a web development company. From expertise and technical proficiency to customization and affordability, find your perfect partner in web development.",
-    image: "/blog1.png",
-    authorImage: "/blog2.png",
-    authorName: "John Doe",
-    date: "July 03, 2023",
-    slug: "/blog/essential-qualities",
-  },
-  {
-    id: 2,
-    title: "Building Scalable Web Apps with Next.js",
-    description:
-      "Learn how to build scalable and performant web applications using the latest Next.js features, including App Router and SSR.",
-    image: "/blog3.png",
-    authorImage: "/blog4.png",
-    authorName: "Jane Smith",
-    date: "July 10, 2023",
-    slug: "/blog/scalable-nextjs-apps",
-  },
-  {
-    id: 1,
-    title: "10 Essential Qualities to Look for in a Web Development Company",
-    description:
-      "Discover the 10 essential qualities to look for in a web development company. From expertise and technical proficiency to customization and affordability, find your perfect partner in web development.",
-    image: "/blog1.png",
-    authorImage: "/blog2.png",
-    authorName: "John Doe",
-    date: "July 03, 2023",
-    slug: "/blog/essential-qualities",
-  },
-  {
-    id: 2,
-    title: "Building Scalable Web Apps with Next.js",
-    description:
-      "Learn how to build scalable and performant web applications using the latest Next.js features, including App Router and SSR.",
-    image: "/blog3.png",
-    authorImage: "/blog4.png",
-    authorName: "Jane Smith",
-    date: "July 10, 2023",
-    slug: "/blog/scalable-nextjs-apps",
-  },
-  {
-    id: 1,
-    title: "10 Essential Qualities to Look for in a Web Development Company",
-    description:
-      "Discover the 10 essential qualities to look for in a web development company. From expertise and technical proficiency to customization and affordability, find your perfect partner in web development.",
-    image: "/blog1.png",
-    authorImage: "/blog2.png",
-    authorName: "John Doe",
-    date: "July 03, 2023",
-    slug: "/blog/essential-qualities",
-  },
-  {
-    id: 2,
-    title: "Building Scalable Web Apps with Next.js",
-    description:
-      "Learn how to build scalable and performant web applications using the latest Next.js features, including App Router and SSR.",
-    image: "/blog3.png",
-    authorImage: "/blog4.png",
-    authorName: "Jane Smith",
-    date: "July 10, 2023",
-    slug: "/blog/scalable-nextjs-apps",
-  },
-];
+interface Blog {
+  id: number;
+  title: string;
+  body: string;
+  userId: number;
+  image: string;
+  authorImage: string;
+  authorName: string;
+  date: string;
+  slug: string;
+}
 
-const OurBlogs = () => {
+const OurBlogs: React.FC = () => {
+  const [blogs, setBlogs] = useState<Blog[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+
+  useEffect(() => {
+    async function fetchBlogs() {
+      try {
+        const response = await fetch("https://jsonplaceholder.typicode.com/posts");
+        const data: Blog[] = await response.json();
+
+        const blogsWithDetails = data.map((blog, index) => ({
+          ...blog,
+          image: `/blog${index + 1}.png`,
+          authorImage: "/career.png",
+          authorName: `User ${blog.userId}`,
+          date: "July 10, 2023",
+          slug: `blog-${blog.id}`,
+        }));
+
+        setBlogs(blogsWithDetails);
+      } catch (error) {
+        console.error("Error fetching blog data:", error);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    fetchBlogs();
+  }, []);
+
+  if (loading) {
+    return <p className="text-white text-center py-10">Loading blogs...</p>;
+  }
+
   return (
-    <div className="main-padding py-10 bg-[#131321]">
+    <div className="main-padding py-10 bg-[#131321] text-white">
       <div className="text-center mb-2">
         <Title items={["Recommended topics"]} />
       </div>
       <hr className="border border-gray-700" />
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 py-10">
-        {blogData.map((blog) => (
+        {blogs.map((blog) => (
           <div key={blog.id} className="card">
-            <Image
-              src={blog.image}
-              width={300}
-              height={300}
-              alt={blog.title}
-              className="w-full"
-            />
+            <div className="h-[300px] w-full overflow-hidden rounded-lg">
+              <FallbackImage
+                src={blog.image}
+                alt={blog.title}
+                width={300}
+                height={300}
+                className="w-full h-full object-cover"
+              />
+            </div>
             <div className="pt-7">
-              <Link href={blog.slug}>
-                <h6 className="text-2xl font-medium">{blog.title}</h6>
+              <Link href={`/blog/${blog.slug}`}>
+                <h6 className="text-2xl font-medium hover:text-blue-400 transition">
+                  {blog.title}
+                </h6>
               </Link>
-              <p className="py-5">{blog.description}</p>
+              <p className="py-5 text-gray-300">{blog.body.substring(0, 150)}...</p>
               <div className="flex gap-4 items-center">
-                <Image
+                <FallbackImage
                   src={blog.authorImage}
                   width={50}
                   height={50}
                   alt={blog.authorName}
-                  className="rounded-full object-contain"
+                  className="rounded-full object-cover"
                 />
                 <div>
-                  <p className="text-[#3B5CFF]">{blog.authorName}</p>
-                  <p>{blog.date}</p>
+                  <p className="text-[#3B5CFF] font-semibold">{blog.authorName}</p>
+                  <p className="text-sm text-gray-400">{blog.date}</p>
                 </div>
               </div>
             </div>
