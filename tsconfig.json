@@ -30,7 +30,7 @@
     "next-env.d.ts",
     "pages/**/*",
     ".next/types/**/*.ts"
-  ],
+, "app/blog/[slug]"  ],
   "exclude": [
     "node_modules"
   ]
