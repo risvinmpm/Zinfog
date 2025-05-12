@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import Title from "../../common/Title";
 import Link from "next/link";
-import FallbackImage from "../../common/FallbackImage"; // Adjust path if needed
+import FallbackImage from "../../common/FallbackImage";
 
 interface Blog {
   id: number;

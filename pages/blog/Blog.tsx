@@ -2,7 +2,6 @@ import React from "react";
 import { Navbar } from "../../components/layout/Navbar";
 import Footer from "../../components/layout/Footer";
 import Banner from "../../components/main/blog/Banner";
-import OurBlog from "../../components/main/OurBlog";
 import OurBlogs from "../../components/main/blog/OurBlogs";
 import MostReview from "../../components/main/blog/MostReview";
 import Recommended from "../../components/main/blog/Recommended";
