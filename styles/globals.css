@@ -7,7 +7,7 @@ body {
 }
 
 .main-padding {
-  @apply px-5 lg:px-[50px] xl:px-[100px] 2xl:px-[200px];
+  @apply mx-auto px-4 sm:px-6 lg:px-12 max-w-7xl;
 }
 
 .btn_blue {
@@ -113,5 +113,12 @@ body {
     background: linear-gradient(99.64deg, #5e06cf 0%, #954bf4 100.82%);
     padding: 30px;
     backdrop-filter: blur(200px);
+  }
+
+  .PhoneInputCountryIcon {
+    display: none !important;
+  }
+  .PhoneInputCountry {
+    padding-left: 0 !important;
   }
 }
