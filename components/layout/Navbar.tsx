@@ -124,11 +124,12 @@ export function Navbar({ className }: { className?: string }) {
             <HoveredLink href="/blog/Blog">
               <MenuItem setActive={setActive} active={null} item="Blog" />
             </HoveredLink>
+
           </div>
 
           {/* Desktop Button */}
           <div className="hidden md:block">
-            <Button type="button" title="Contact Us" variant="btn_blue" />
+            <HoveredLink href="/contactus/ContactUs"><Button type="button" title="Contact Us" variant="btn_blue" /></HoveredLink>
           </div>
 
           {/* Mobile Menu Toggle */}
