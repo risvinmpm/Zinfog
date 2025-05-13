@@ -13,7 +13,8 @@ const Goldzin = () => {
     },
   ];
   return (
-    <section className="main-padding py-10 lg:py-20 xl:py-30 bg-[#131321] scroll" id="goldzin">
+    <section className="py-10 lg:py-20 xl:py-30 bg-[#131321] scroll" id="goldzin">
+      <div className="main-padding">
         <div className="md:max-w-3xl mx-auto">
           {products.map((product, index) => (
             <div
@@ -59,6 +60,7 @@ const Goldzin = () => {
             </div>
           ))}
         </div>
+      </div>
     </section>
   );
 };

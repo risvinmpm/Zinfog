@@ -1,4 +1,3 @@
-// app/layout.tsx
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "../styles/globals.css";
@@ -17,7 +16,6 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Zinfog",
   description: "Zinfog Code Labs",
-  // Optional: you can leave this or remove it; head.tsx is more reliable
   icons: {
     icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
   },
