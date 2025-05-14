@@ -47,7 +47,7 @@ const Hero = () => {
         />
 
         {/* Typewriter Effect */}
-        <div className="absolute top-10 left-33  transform -translate-y-1/2 rotate-90 origin-left">
+        <div className="absolute top-10 left-33 md:left-44 transform -translate-y-1/2 rotate-90 origin-left">
           <TypewriterEffect words={words} />
         </div>
       </div>
