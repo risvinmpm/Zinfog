@@ -26,12 +26,12 @@ const BestMobApp: React.FC = () => {
     ]
 
     return (
-        <div className="main-padding bg-[#131321] py-10 lg:py-20">
+        <div className="bg-[#131321] py-10 lg:py-20">
             <h4 className="text-center text-2xl font-bold max-w-lg mx-auto text-white mb-10">
                 Why we are the best ecommerce mobile app development company.
             </h4>
 
-            <div className="space-y-16 lg:max-w-4xl mx-auto">
+            <div className="space-y-16 lg:max-w-4xl mx-auto main-padding">
                 {sections.map((section, index) => (
                     <div
                         key={index}

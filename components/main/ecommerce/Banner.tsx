@@ -63,7 +63,7 @@ const Banner = () => {
 
     return (
         <div
-            className="relative bg-cover bg-no-repeat bg-center mt-10 lg:mt-20 py-16 main-padding"
+            className="relative bg-cover bg-no-repeat bg-center mt-10 lg:mt-20 py-16"
             style={{ backgroundImage: 'url("/mobileapps.png")' }}
         >
             {/* Overlays */}
@@ -78,7 +78,7 @@ const Banner = () => {
                 style={{ backgroundImage: 'url("/count-bg.png")' }}
             />
 
-            <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-screen-xl mx-auto">
+            <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-screen-xl mx-auto main-padding">
                 {/* Left Section */}
                 <div className="flex flex-col justify-center space-y-6">
                     <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-snug">
