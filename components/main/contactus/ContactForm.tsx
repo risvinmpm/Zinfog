@@ -52,13 +52,13 @@ const ContactForm = () => {
   type Option = { label: string; value: string };
 
   const services: Option[] = [
-    { label: "Odoo ERP development", value: "option1" },
-    { label: "Mobile app development", value: "option2" },
-    { label: "Website development", value: "option3" },
-    { label: "UIUX design", value: "option4" },
-    { label: "Desktop application management", value: "option5" },
-    { label: "Customization Third party Software integration", value: "option6" },
-    { label: "Other", value: "option7" }
+    { label: "Odoo ERP development", value: "Odoo ERP development" },
+    { label: "Mobile app development", value: "Mobile app development" },
+    { label: "Website development", value: "Website development" },
+    { label: "UIUX design", value: "UIUX design" },
+    { label: "Desktop application management", value: "Desktop application management" },
+    { label: "Customization Third party Software integration", value: "Customization Third party Software integration" },
+    { label: "Other", value: "Other" }
   ];
 
   const budgets: Option[] = [
@@ -69,7 +69,7 @@ const ContactForm = () => {
   ];
 
   const RadioGroup = ({ options, selected, onChange }) => (
-    <div className="grid grid-cols-2 gap-4 w-full">
+    <div className="grid md:grid-cols-2 gap-4 w-full">
       {options.map((option) => (
         <label
           key={option.value}
@@ -169,7 +169,7 @@ const ContactForm = () => {
             </div>
             <div>
               <label className="block mb-2 text-sm font-semibold">Phone Number*</label>
-              <div className="flex gap-3">
+              <div className="md:flex gap-3">
                 <CountrySelect value={country} onChange={setCountry} labels={{ ZZ: "Select Country" }} />
                 <PhoneInput
                   international
@@ -199,7 +199,7 @@ const ContactForm = () => {
               id="message"
               name="message"
               rows={5}
-              className="w-full p-3 rounded-lg bg-[#1E1E2F] border border-[#26293C] text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
+              className="w-full p-3 rounded-lg bg-[#2E3142] border border-[#3B3E54] text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
               placeholder="Describe your project"
             ></textarea>
           </div>
