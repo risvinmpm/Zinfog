@@ -18,7 +18,7 @@ const ContactForm = () => {
   const recaptchaRef = useRef<ReCAPTCHA>(null);
 
   const handleCaptchaChange = (value: string | null) => {
-    setCaptchaVerified(!!value);
+    setCaptchaVerified(!!value); // Set captchaVerified to true if reCAPTCHA is successful
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -107,7 +107,7 @@ const ContactForm = () => {
   );
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mt-20 px-4 md:px-10">
+    <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mt-20">
       {/* Sidebar */}
       <div className="md:col-span-4">
         <div className="bg-[#2E31423D] backdrop-blur-[100px] p-10 md:p-20 rounded-lg text-white">
@@ -151,7 +151,7 @@ const ContactForm = () => {
 
       {/* Form */}
       <div className="md:col-span-8">
-        <form onSubmit={handleSubmit} className="bg-[#1E1F2B] p-8 rounded-lg text-white space-y-6">
+        <form onSubmit={handleSubmit} className="px-10 lg:px-20 py-10 xl:px-30 rounded-lg text-white space-y-6">
           <h2 className="text-2xl font-bold">Let’s talk about your project</h2>
           <p className="text-sm">
             We pride ourselves in being fully transparent. You will always be involved in all business decisions.
@@ -200,7 +200,7 @@ const ContactForm = () => {
               name="message"
               rows={5}
               className="w-full p-3 rounded-lg bg-[#1E1E2F] border border-[#26293C] text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
-              placeholder="Write your message here..."
+              placeholder="Describe your project"
             ></textarea>
           </div>
 
