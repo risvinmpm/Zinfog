@@ -7,7 +7,7 @@ import React from "react";
 const Enquiry = () => {
   return (
     <>
-      <section className="main-padding text-white xl:mb-26">
+      <section className="main-padding text-white mb-10 lg:mb-16 xl:mb-26">
         {/* Call to Action Block */}
         <div className="bg-[#2C3D95] rounded-2xl">
           <div className="grid grid-cols-1 md:grid-cols-6 w-full h-full items-center">
