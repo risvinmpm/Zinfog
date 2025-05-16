@@ -69,7 +69,7 @@ const GetInTouch = () => {
             <div className="main-padding py-10 lg:py-20 xl:py-30 relative">
                 {/* Amber background section with image */}
                 <div
-                    className="grid md:grid-cols-4 bg-[#2C3D95] px-6 sm:px-12 lg:px-20 py-5 bg-bottom bg-no-repeat bg-fill"
+                    className="grid md:grid-cols-4 bg-[#2C3D95] px-6 sm:px-12 lg:px-20 py-5 bg-bottom bg-no-repeat bg-fill rounded-3xl"
                     style={{ backgroundImage: 'url("/project-bg.png")' }}
                 >
                     {/* Left Side Content */}

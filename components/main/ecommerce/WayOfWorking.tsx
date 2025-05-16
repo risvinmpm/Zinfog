@@ -21,7 +21,7 @@ const WayOfWorking: React.FC = () => {
     ]
 
     return (
-        <div className="main-padding py-10 lg:py-20 xl:py-30 relative overflow-hidden">
+        <div className="py-10 lg:py-20 xl:py-30 relative overflow-hidden">
            
             <div
                 className="absolute inset-0 z-0 bg-top bg-no-repeat bg-cover"
@@ -38,7 +38,7 @@ const WayOfWorking: React.FC = () => {
                 <Button variant="btn_light_blue" title="Learn more now" type="button" />
             </div>
 
-            <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 main-padding">
                 {cards.map((card, index) => (
                     <div key={index} className="card card-bg p-10 rounded-lg">
                         <h6 className="font-semibold mb-2">{card.title}</h6>

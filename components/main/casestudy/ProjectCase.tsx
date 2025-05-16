@@ -60,10 +60,10 @@ const ProjectCase = () => {
       {sectionData.map((section, index) => (
         <div
           key={index}
-          className="main-padding py-10"
+          className="py-10"
           style={{ backgroundColor: section.bgColor }}
         >
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start main-padding">
             {/* Left: Text */}
             <div className="lg:col-span-6">
               <div className="max-w-xl">

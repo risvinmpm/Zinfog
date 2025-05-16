@@ -43,7 +43,7 @@ export const TypewriterEffect = ({
           {typedText.split("").map((char, index) => (
             <motion.span
               key={index}
-              className={cn("dark:text-white text-white font-light text-base")}
+              className={cn("dark:text-white text-white font-light text-sm")}
             >
               {char}
             </motion.span>

@@ -13,8 +13,8 @@ const roles = [
 
 const Role = () => {
   return (
-    <section className='bg-[#131321] main-padding py-10 lg:py-20 xl:py-30'>
-      <div className='grid grid-cols-1 lg:grid-cols-2 gap-10 mx-auto'>
+    <section className='bg-[#131321] py-10 lg:py-20 xl:py-30'>
+      <div className='grid grid-cols-1 lg:grid-cols-2 gap-10 mx-auto main-padding'>
         {/* Left Section */}
         <div>
           <h1 className='text-3xl lg:text-4xl xl:text-5xl font-bold pb-6'>Find the role</h1>
