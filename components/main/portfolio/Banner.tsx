@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 const Banner = () => {
     return (
-        <div className="w-full h-full py-10 lg:py-20 xl:py-30 bg-[rgb(27, 29, 50)] relative main-padding">
+        <div className="w-full h-full py-10 lg:py-20 bg-[rgb(27, 29, 50)] relative main-padding mt-20">
             <div
                 className="absolute inset-0 z-0 bg-center bg-no-repeat bg-fill"
                 style={{ backgroundImage: 'url("/banner-bg.png")' }}

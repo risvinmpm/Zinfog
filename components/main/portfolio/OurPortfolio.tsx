@@ -7,7 +7,7 @@ const OurPortfolio = () => {
 
     return (
         <section className="pb-10 lg:pb-20 xl:pb-30 main-padding">
-            <div className="lg:py-10">
+            <div className="lg:pb-10">
                 {/* Header */}
                 <div className="text-center mb-2">
                     <Title items={headerItems} />
