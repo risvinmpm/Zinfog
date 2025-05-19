@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
+import { motion } from "framer-motion"; // Import framer-motion
 
 import Button from "../common/Button";
 import { TypewriterEffect } from "../Ui/typewriter-effect";
@@ -16,9 +17,41 @@ const Hero = () => {
     { text: "CONNECT US AND GROW" },
   ];
 
+
+  const bounceInLeft = {
+    hidden: { opacity: 0, x: -100 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        type: "spring",
+        stiffness: 400, 
+        damping: 10,    
+      },
+    },
+  };
+
+  const bounceInRight = {
+    hidden: { opacity: 0, x: 100 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        type: "spring",
+        stiffness: 400, 
+        damping: 10, 
+      },
+    },
+  };
+
   return (
     <section className="mt-[100px] grid md:grid-cols-2 gap-10 items-center main-padding relative">
-      <div>
+      {/* Left Section (Text Content) */}
+      <motion.div
+        variants={bounceInLeft}
+        initial="hidden"
+        animate="visible"
+      >
         <h1 className="text-4xl lg:text-5xl font-bold leading-tight">
           Web Development Company right at the touch!
         </h1>
@@ -29,9 +62,15 @@ const Hero = () => {
         <div className="mt-7">
           <Button type="button" variant="btn_blue" title="Book a demo!" />
         </div>
-      </div>
+      </motion.div>
 
-      <div className="relative flex justify-center items-center">
+      {/* Right Section (Image Content) */}
+      <motion.div
+        variants={bounceInRight}
+        initial="hidden"
+        animate="visible"
+        className="relative flex justify-center items-center"
+      >
         <Image src={banner} alt="banner" width={600} height={500} />
 
         {/* Decorative Line */}
@@ -50,7 +89,7 @@ const Hero = () => {
         <div className="absolute top-10 left-33 md:left-44 transform -translate-y-1/2 rotate-90 origin-left">
           <TypewriterEffect words={words} />
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };
