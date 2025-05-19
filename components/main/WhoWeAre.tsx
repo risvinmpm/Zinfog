@@ -1,9 +1,10 @@
-"use client"
+"use client";
 import Image from "next/image";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Button from "../common/Button";
 import Title from "../common/Title";
 import { LinkPreview } from "../Ui/link-preview";
+import { motion } from "framer-motion";
 
 
 const headerItems = ["Who We Are?", "about us"];
@@ -16,42 +17,66 @@ const contentData = {
   ],
 };
 
+const bounceInRight = {
+  hidden: { opacity: 0, x: 100 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      type: "spring",
+      stiffness: 400,
+      damping: 10,
+    },
+  },
+};
+
 const WhoWeAre = () => {
+
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  const handleScroll = () => {
+    setScrollPosition(window.scrollY);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const triggerAnimation = scrollPosition > 300;
+
   return (
     <div className="main-padding">
-
       <Title items={headerItems} />
       <hr className="border border-gray-300" />
 
       <div className="grid md:grid-cols-2 text-[#D5D5D5] relative">
         <div className="md:flex md:flex-col lg:justify-center pt-5 lg:pt-0">
-          <h1 className="text-xl lg:text-4xl font-bold">
-            {contentData.heading}
-          </h1>
+          <h1 className="text-xl lg:text-4xl font-bold">{contentData.heading}</h1>
 
           {contentData.paragraphs.map((para, idx) => (
-            <p
-              key={idx}
-              className={`text-base ${idx === 0 ? "py-5 lg:py-7" : ""}`}
-            >
+            <p key={idx} className={`text-base ${idx === 0 ? "py-5 lg:py-7" : ""}`}>
               {para}
             </p>
           ))}
 
           <div className="mt-5 lg:mt-7 font-bold flex items-center">
-           <LinkPreview url="https://framer.com/motion"> <Button
-              type="button"
-              variant=""
-              title="EXPLORE OUR WORK"
-              icon="/arrow.png"
-            />
+            <LinkPreview url="https://framer.com/motion">
+              <Button type="button" variant="" title="EXPLORE OUR WORK" icon="/arrow.png" />
             </LinkPreview>
           </div>
         </div>
 
-        <div className="mx-auto">
+        <motion.div
+          variants={bounceInRight}
+          initial="hidden"
+          animate={triggerAnimation ? "visible" : "hidden"}
+          className="mx-auto"
+        >
           <Image src="/man.png" width={400} height={500} alt="man" />
-        </div>
+        </motion.div>
       </div>
     </div>
   );

@@ -1,6 +1,19 @@
+"use client"
+
 import Image from "next/image";
 import React from "react";
+import { motion } from "framer-motion";
 import Button from "../common/Button";
+
+const contentVariants = {
+  hidden: { x: 200, opacity: 0 },
+  visible: { x: 0, opacity: 1 },
+};
+
+const imageVariants = {
+  hidden: { x: -200, opacity: 0 },
+  visible: { x: 0, opacity: 1 },
+};
 
 const OurProducts = () => {
   const products = [
@@ -33,10 +46,17 @@ const OurProducts = () => {
           {products.map((product, index) => (
             <div
               key={index}
-              className="flex flex-col md:flex-row gap-10 items-center"
+              className="flex flex-col md:flex-row gap-10 items-center mb-16"
             >
-              {/* Left Image */} 
-              <div className="w-full lg:w-1/2">
+              {/* Image with right-to-left animation */}
+              <motion.div
+                className="w-full lg:w-1/2"
+                variants={imageVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+              >
                 <Image
                   src={product.image}
                   width={600}
@@ -44,23 +64,26 @@ const OurProducts = () => {
                   alt={product.title}
                   className="w-full h-auto object-contain"
                 />
-              </div>
+              </motion.div>
 
-              {/* Right Content */}
-              <div className="w-full lg:w-1/2 relative">
-                {/* Number & Title Block */}
+              {/* Content with left-to-right animation */}
+              <motion.div
+                className="w-full lg:w-1/2 relative"
+                variants={contentVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+              >
                 <div className="relative mb-6 h-[80px]">
-                  {/* Background number */}
                   <span className="absolute text-[4rem] sm:text-[5rem] font-bold text-white/10 leading-none top-0 left-0 z-0">
                     {product.number}
                   </span>
-                  {/* Title over the number */}
                   <h2 className="relative z-10 pt-4 pl-3 text-lg sm:text-xl lg:text-2xl font-bold">
                     {product.title}
                   </h2>
                 </div>
 
-                {/* Description & Button */}
                 <p className="mb-6 text-sm sm:text-base">
                   {product.description}
                 </p>
@@ -70,7 +93,7 @@ const OurProducts = () => {
                   title="KNOW MORE"
                   icon="/arrow.png"
                 />
-              </div>
+              </motion.div>
             </div>
           ))}
         </div>
