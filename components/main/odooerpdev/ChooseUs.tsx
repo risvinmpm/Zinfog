@@ -1,5 +1,20 @@
-import React from "react";
+import React, { useRef } from "react";
 import Title from "../../common/Title";
+import { motion, useInView } from "framer-motion";
+
+
+const bounceInRight = {
+  hidden: { opacity: 0, x: 100 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      type: "spring",
+      stiffness: 400,
+      damping: 10,
+    },
+  },
+};
 
 const ChooseUs = () => {
   const headerItems = ["Why you choose us", "02"];
@@ -10,6 +25,11 @@ const ChooseUs = () => {
         "Hassle-free work environments are what employees need. Zinfog Codelabs has mastered the art of delivering tailored ODOO Enterprise Resource Planning (ERP) services to suit customer needs. We’ve built our ODOO service to be user-friendly, allowing anyone to efficiently manage business operations. From accounting and project management to risk and human resource management, ODOO simplifies everything."
     }
   ];
+
+
+  // Scroll animation ref and hook
+  const imageRef = useRef(null);
+  const isInView = useInView(imageRef, { once: true, margin: "0px 0px -100px 0px" });
 
   return (
     <section className="pb-5 lg:pb-10 bg-[#131321]">
@@ -31,9 +51,14 @@ const ChooseUs = () => {
                   {item.title}
                 </h2>
               </div>
-              <div>
+              <motion.div
+                ref={imageRef}
+                variants={bounceInRight}
+                initial="hidden"
+                animate={isInView ? "visible" : "hidden"}
+              >
                 <p className="leading-relaxed">{item.description}</p>
-              </div>
+              </motion.div>
             </React.Fragment>
           ))}
         </div>

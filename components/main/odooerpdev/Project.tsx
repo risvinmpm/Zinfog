@@ -1,12 +1,26 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import Button from "../../common/Button";
 import Title from "../../common/Title";
+import AnimatedOnScroll from "../../common/AnimatedOnScroll";
 
-const Project = () => {
+interface ProjectItem {
+  icon: string;
+  title: string;
+  headline: string;
+  description: string;
+  button: {
+    title: string;
+    icon: string;
+    variant: string;
+  };
+}
+
+const Project: React.FC = () => {
   const headerItems = ["Projects", "05"];
 
-  const projects = [
+  const projects: ProjectItem[] = [
     {
       icon: "/odoo_icon.png",
       title: "Odoo ERP Development",
@@ -19,22 +33,28 @@ const Project = () => {
         variant: "",
       },
     },
-    // Add more projects here if needed
   ];
+
+  const contentAnimation = {
+    hidden: { x: -200, opacity: 0 },
+    visible: { x: 0, opacity: 1 },
+  };
+
+  const imageAnimation = {
+    hidden: { x: 200, opacity: 0 },
+    visible: { x: 0, opacity: 1 },
+  };
 
   return (
     <div className="bg-[#AB5895] w-full h-full py-4 lg:py-8 xl:py-16">
       <div className="main-padding">
-        {/* Section Title */}
         <div className="text-center mb-5">
           <Title items={headerItems} />
         </div>
-
         <hr className="border border-gray-300" />
 
         <div className="bg-[#832d6c21] w-full h-full rounded-xl grid md:grid-cols-5 mt-10 md:my-20 p-7 md:p-14">
-          {/* Left side - project details from array */}
-          <div className="col-span-3">
+          <AnimatedOnScroll variants={contentAnimation} className="col-span-3">
             {projects.map((project, index) => (
               <div key={index} className="relative">
                 <Image
@@ -57,10 +77,12 @@ const Project = () => {
                 />
               </div>
             ))}
-          </div>
+          </AnimatedOnScroll>
 
-          {/* Right side - static image (shown once) */}
-          <div className="col-span-2 flex justify-center items-start">
+          <AnimatedOnScroll
+            variants={imageAnimation}
+            className="col-span-2 flex justify-center items-start"
+          >
             <Image
               src="/project.png"
               width={400}
@@ -68,7 +90,7 @@ const Project = () => {
               alt="Project Visual"
               className="w-full h-auto"
             />
-          </div>
+          </AnimatedOnScroll>
         </div>
       </div>
     </div>

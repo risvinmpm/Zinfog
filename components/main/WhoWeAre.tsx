@@ -1,10 +1,10 @@
 "use client";
 import Image from "next/image";
-import React, { useState, useEffect } from "react";
+import React, { useRef } from "react";
 import Button from "../common/Button";
 import Title from "../common/Title";
 import { LinkPreview } from "../Ui/link-preview";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 
 
 const headerItems = ["Who We Are?", "about us"];
@@ -32,20 +32,9 @@ const bounceInRight = {
 
 const WhoWeAre = () => {
 
-  const [scrollPosition, setScrollPosition] = useState(0);
-
-  const handleScroll = () => {
-    setScrollPosition(window.scrollY);
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  const triggerAnimation = scrollPosition > 300;
+   // Scroll animation ref and hook
+   const imageRef = useRef(null);
+   const isInView = useInView(imageRef, { once: true, margin: "0px 0px -100px 0px" });
 
   return (
     <div className="main-padding">
@@ -70,9 +59,10 @@ const WhoWeAre = () => {
         </div>
 
         <motion.div
+          ref={imageRef}
           variants={bounceInRight}
           initial="hidden"
-          animate={triggerAnimation ? "visible" : "hidden"}
+          animate={isInView ? "visible" : "hidden"}
           className="mx-auto"
         >
           <Image src="/man.png" width={400} height={500} alt="man" />

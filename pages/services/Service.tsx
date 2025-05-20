@@ -9,6 +9,7 @@ import Link from "next/link";
 import Button from "../../components/common/Button";
 import { LinkPreview } from "../../components/Ui/link-preview";
 import Title from "../../components/common/Title";
+import { motion } from "framer-motion";
 
 
 const serviceData = [
@@ -19,6 +20,33 @@ const serviceData = [
     image: "/service-banner.png",
   },
 ];
+
+
+const bounceInLeft = {
+  hidden: { opacity: 0, x: -100 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      type: "spring",
+      stiffness: 400,
+      damping: 10,
+    },
+  },
+};
+
+const bounceInRight = {
+  hidden: { opacity: 0, x: 100 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      type: "spring",
+      stiffness: 400,
+      damping: 10,
+    },
+  },
+};
 
 const Service = () => {
 
@@ -105,15 +133,23 @@ const Service = () => {
         <div className="main-padding">
           {serviceData.map((service, index) => (
             <div key={index} className="grid md:grid-cols-5 gap-10">
-              <div className="md:col-span-3">
+              <motion.div
+                variants={bounceInLeft}
+                initial="hidden"
+                animate="visible"
+                className="md:col-span-3">
                 <h2 className="text-2xl lg:text-4xl xl:text-6xl font-semibold xl:leading-16">
                   {service.heading}
                 </h2>
                 <p className="md:max-w-lg text-lg font-extralight pt-5 md:pt-10">
                   {service.description}
                 </p>
-              </div>
-              <div className="md:col-span-2">
+              </motion.div>
+              <motion.div
+                variants={bounceInRight}
+                initial="hidden"
+                animate="visible"
+                className="md:col-span-2">
                 <Image
                   src={service.image}
                   width={300}
@@ -121,7 +157,7 @@ const Service = () => {
                   alt="Service Banner"
                   className="w-full"
                 />
-              </div>
+              </motion.div>
             </div>
           ))}
         </div>
