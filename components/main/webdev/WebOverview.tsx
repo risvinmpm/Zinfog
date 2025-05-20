@@ -1,6 +1,21 @@
-import React from 'react'
+import React, { useRef } from "react";
 import Title from '../../common/Title';
 import Image from 'next/image';
+import { motion, useInView } from "framer-motion";
+
+
+const bounceInRight = {
+    hidden: { opacity: 0, x: 100 },
+    visible: {
+        opacity: 1,
+        x: 0,
+        transition: {
+            type: "spring",
+            stiffness: 400,
+            damping: 10,
+        },
+    },
+};
 
 const WebOverview = () => {
 
@@ -12,6 +27,11 @@ const WebOverview = () => {
             description: `In the 21st century, Search trafficking plays an important role in converting leads to sales. A well maintained website is a requirement of every company and being a web development company, we can help you well with your needs.`,
         },
     ];
+
+    // Scroll animation ref and hook
+    const imageRef = useRef(null);
+    const isInView = useInView(imageRef, { once: true, margin: "0px 0px -100px 0px" });
+
     return (
         <section className="bg-[#131321]">
             <div className="main-padding py-10">
@@ -38,7 +58,13 @@ const WebOverview = () => {
                     </div>
 
                     {/* Right Column - Single Image */}
-                    <div className="flex justify-center">
+                     <motion.div
+                                ref={imageRef}
+                                variants={bounceInRight}
+                                initial="hidden"
+                                animate={isInView ? "visible" : "hidden"}
+                                className="flex justify-center"
+                              >
                         <Image
                             src="/web-dev.png"
                             width={300}
@@ -46,7 +72,7 @@ const WebOverview = () => {
                             alt="Odoo ERP"
                             className="max-w-sm object-contain"
                         />
-                    </div>
+                    </motion.div>
                 </div>
             </div>
         </section>

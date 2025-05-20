@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import { motion } from "framer-motion"; // Import framer-motion
+import { motion } from "framer-motion";
 
 import Button from "../common/Button";
 import { TypewriterEffect } from "../Ui/typewriter-effect";

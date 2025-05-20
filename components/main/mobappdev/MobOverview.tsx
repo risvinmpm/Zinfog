@@ -1,6 +1,21 @@
-import React from "react";
+import React, { useRef } from "react";
 import Title from "../../common/Title";
 import Image from "next/image";
+import { motion, useInView } from "framer-motion";
+
+const bounceInRight = {
+  hidden: { opacity: 0, x: 100 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      type: "spring",
+      stiffness: 400,
+      damping: 10,
+    },
+  },
+};
+
 
 const MobOverview = () => {
   const headerItems = ["services overview", "01"];
@@ -14,8 +29,11 @@ const MobOverview = () => {
       title: "React native mobile app development",
       description: `Zinfog Codelabs specializes in providing top-notch React Native app development services to clients. We are a dedicated React Native app development company with a skilled team of developers who are experts in creating high-quality mobile apps using the React Native framework. We understand the importance of delivering robust, user-friendly and scalable solutions to meet our clients' unique business needs.`,
     },
-    // Add more sections if needed
   ];
+
+    // Scroll animation ref and hook
+    const imageRef = useRef(null);
+    const isInView = useInView(imageRef, { once: true, margin: "0px 0px -100px 0px" });
 
   return (
     <section className="bg-[#131321]">
@@ -43,7 +61,13 @@ const MobOverview = () => {
           </div>
 
           {/* Right Column - Single Image */}
-          <div className="flex justify-center">
+          <motion.div
+            ref={imageRef}
+            variants={bounceInRight}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            className="flex justify-center"
+          >
             <Image
               src="/mobileapp.png"
               width={300}
@@ -51,10 +75,10 @@ const MobOverview = () => {
               alt="Odoo ERP"
               className="max-w-sm object-contain"
             />
-          </div>
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </div>
+    </section >
   );
 };
 
