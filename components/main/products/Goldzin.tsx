@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import Button from "../../common/Button";
+import AnimatedOnScroll from "../../common/AnimatedOnScroll";
 
 const Goldzin = () => {
   const products = [
@@ -12,6 +13,17 @@ const Goldzin = () => {
       image: "/goldzin_mockup.png",
     },
   ];
+
+  const imageAnimation = {
+    hidden: { x: -200, opacity: 0 },
+    visible: { x: 0, opacity: 1 },
+  };
+
+  const contentAnimation = {
+    hidden: { x: 200, opacity: 0 },
+    visible: { x: 0, opacity: 1 },
+  };
+
   return (
     <section className="py-10 lg:py-20 xl:py-30 bg-[#131321] scroll" id="goldzin">
       <div className="main-padding">
@@ -22,7 +34,7 @@ const Goldzin = () => {
               className="flex flex-col md:flex-row gap-10 items-center"
             >
               {/* Left Image */}
-              <div className="w-full lg:w-1/2">
+              <AnimatedOnScroll variants={imageAnimation} className="w-full lg:w-1/2">
                 <Image
                   src={product.image}
                   width={600}
@@ -30,10 +42,10 @@ const Goldzin = () => {
                   alt={product.title}
                   className="w-full h-auto object-contain"
                 />
-              </div>
+              </AnimatedOnScroll>
 
               {/* Right Content */}
-              <div className="w-full lg:w-1/2 relative">
+              <AnimatedOnScroll variants={contentAnimation} className="w-full lg:w-1/2 relative">
                 {/* Number & Title Block */}
                 <div className="relative mb-6 h-[80px]">
                   {/* Background number */}
@@ -56,7 +68,7 @@ const Goldzin = () => {
                   title="VISIT SITE"
                   icon="/arrow.png"
                 />
-              </div>
+              </AnimatedOnScroll>
             </div>
           ))}
         </div>
