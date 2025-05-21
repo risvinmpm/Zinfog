@@ -1,6 +1,7 @@
+import Image from "next/image";
 import React from "react";
 import Button from "../../common/Button";
-import Image from "next/image";
+import AnimatedOnScroll from "../../common/AnimatedOnScroll";
 
 const Zsuite = () => {
   const products = [
@@ -12,6 +13,17 @@ const Zsuite = () => {
       image: "/zsuite.png",
     },
   ];
+
+    const imageAnimation = {
+    hidden: { x: -200, opacity: 0 },
+    visible: { x: 0, opacity: 1 },
+  };
+
+  const contentAnimation = {
+    hidden: { x: 200, opacity: 0 },
+    visible: { x: 0, opacity: 1 },
+  };
+
   return (
     <section className="main-padding py-10 lg:py-20 xl:py-30 scroll" id="zsuite">
       <div className="md:max-w-3xl mx-auto">
@@ -21,7 +33,7 @@ const Zsuite = () => {
             className="flex flex-col md:flex-row gap-10 items-center"
           >
             {/* Left Image */}
-            <div className="w-full lg:w-1/2">
+            <AnimatedOnScroll variants={imageAnimation} className="w-full lg:w-1/2">
               <Image
                 src={product.image}
                 width={600}
@@ -29,10 +41,10 @@ const Zsuite = () => {
                 alt={product.title}
                 className="w-full h-auto object-contain"
               />
-            </div>
+            </AnimatedOnScroll>
 
             {/* Right Content */}
-            <div className="w-full lg:w-1/2 relative">
+            <AnimatedOnScroll variants={contentAnimation} className="w-full lg:w-1/2 relative">
               {/* Number & Title Block */}
               <div className="relative mb-6 h-[80px]">
                 {/* Background number */}
@@ -55,7 +67,7 @@ const Zsuite = () => {
                 title="VISIT SITE"
                 icon="/arrow.png"
               />
-            </div>
+            </AnimatedOnScroll>
           </div>
         ))}
       </div>
