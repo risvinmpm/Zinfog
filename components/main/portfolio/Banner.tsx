@@ -1,8 +1,36 @@
-import React from 'react'
+"use client";
+import React from "react";
 import Button from '../../common/Button'
 import Image from 'next/image'
+import { motion } from "framer-motion";
 
 const Banner = () => {
+    const bounceInLeft = {
+        hidden: { opacity: 0, x: -100 },
+        visible: {
+            opacity: 1,
+            x: 0,
+            transition: {
+                type: "spring",
+                stiffness: 400,
+                damping: 10,
+            },
+        },
+    };
+
+    const bounceInRight = {
+        hidden: { opacity: 0, x: 100 },
+        visible: {
+            opacity: 1,
+            x: 0,
+            transition: {
+                type: "spring",
+                stiffness: 400,
+                damping: 10,
+            },
+        },
+    };
+
     return (
         <div className="w-full h-full py-10 lg:py-20 bg-[rgb(27, 29, 50)] relative main-padding mt-20">
             <div
@@ -10,7 +38,11 @@ const Banner = () => {
                 style={{ backgroundImage: 'url("/banner-bg.png")' }}
             />
             <div className="grid grid-cols-1 sm:grid-cols-5 items-center gap-10">
-                <div className="sm:col-span-3 flex flex-col justify-center h-full">
+                <motion.div
+                    variants={bounceInLeft}
+                    initial="hidden"
+                    animate="visible"
+                    className="sm:col-span-3 flex flex-col justify-center h-full">
                     <h1 className="text-3xl lg:text-5xl xl:text-6xl font-semibold max-w-xl">
                         Creating world class digital solutions
                     </h1>
@@ -18,8 +50,12 @@ const Banner = () => {
                         Keeping up with the pace digitally, Zinfog has developed World class digital solutions for your business.
                     </p>
                     <div><Button variant="btn_blue" title="Request a quote" type="button" /></div>
-                </div>
-                <div className="sm:col-span-2 flex flex-col items-center justify-center">
+                </motion.div>
+                <motion.div
+                    variants={bounceInRight}
+                    initial="hidden"
+                    animate="visible"
+                    className="sm:col-span-2 flex flex-col items-center justify-center">
                     <Image
                         src="/portfolio_banner.png"
                         width={400}
@@ -34,9 +70,9 @@ const Banner = () => {
                         alt="Scroll Icon"
                         className="mx-auto mt-4"
                     />
-                </div>
+                </motion.div>
             </div>
-        </div>
+        </div >
     )
 }
 
