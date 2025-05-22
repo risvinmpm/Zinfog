@@ -3,6 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Title from '../../common/Title';
+import { motion } from 'framer-motion';
 
 const sectionData = [
   {
@@ -78,17 +79,30 @@ const ProjectCase = () => {
               </div>
             </div>
 
-            {/* Right: Images */}
+            {/* Right: Animated Images */}
             <div className="lg:col-span-6 flex flex-col gap-6">
               {section.images.map((img, i) => (
-                <Image
+                <motion.div
                   key={i}
-                  src={img}
-                  alt={`${section.title} image ${i + 1}`}
-                  width={400}
-                  height={400}
-                  className="mx-auto"
-                />
+                  initial={{ x: 100, opacity: 0 }}
+                  whileInView={{ x: 0, opacity: 1 }}
+                  transition={{
+                    type: 'spring',
+                    stiffness: 200,
+                    damping: 20,
+                    duration: 0.6,
+                  }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  className="mx-auto w-full"
+                >
+                  <Image
+                    src={img}
+                    alt={`${section.title} image ${i + 1}`}
+                    width={400}
+                    height={400}
+                    className="mx-auto"
+                  />
+                </motion.div>
               ))}
             </div>
           </div>
