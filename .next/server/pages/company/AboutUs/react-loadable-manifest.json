@@ -1,0 +1,10 @@
+{
+  "[project]/components/Ui/ClientSwiper.tsx [client] (ecmascript, next/dynamic entry)": {
+    "id": "[project]/components/Ui/ClientSwiper.tsx [client] (ecmascript, next/dynamic entry)",
+    "files": [
+      "static/chunks/node_modules_swiper_modules_8ee4870c._.css",
+      "static/chunks/components_Ui_ClientSwiper_tsx_f95992e9._.js",
+      "static/chunks/components_Ui_ClientSwiper_tsx_1509c944._.js"
+    ]
+  }
+}

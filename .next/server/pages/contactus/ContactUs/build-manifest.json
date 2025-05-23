@@ -1,0 +1,28 @@
+{
+  "devFiles": [],
+  "ampDevFiles": [],
+  "polyfillFiles": [],
+  "lowPriorityFiles": [],
+  "rootMainFiles": [],
+  "pages": {
+    "/contactus/ContactUs": [
+      "static/chunks/[root-of-the-server]__06112aa7._.js",
+      "static/chunks/node_modules_next_47e78d34._.js",
+      "static/chunks/node_modules_react-dom_82bb97c6._.js",
+      "static/chunks/node_modules_motion_dist_es_bd906084._.js",
+      "static/chunks/node_modules_tailwind-merge_dist_bundle-mjs_mjs_e33d9f9e._.js",
+      "static/chunks/node_modules_react-icons_hi_index_mjs_5c5deb9e._.js",
+      "static/chunks/node_modules_react-icons_ai_index_mjs_2e83ab32._.js",
+      "static/chunks/node_modules_react-icons_fa_index_mjs_bad01e3f._.js",
+      "static/chunks/node_modules_react-icons_lib_75a63dfe._.js",
+      "static/chunks/node_modules_framer-motion_dist_es_c2571419._.js",
+      "static/chunks/node_modules_motion-dom_dist_es_d48eaee5._.js",
+      "static/chunks/node_modules_libphonenumber-js_b664e648._.js",
+      "static/chunks/node_modules_b9758e0c._.js",
+      "static/chunks/node_modules_react-phone-number-input_style_846ac262.css",
+      "static/chunks/pages_contactus_ContactUs_tsx_5771e187._.js",
+      "static/chunks/pages_contactus_ContactUs_tsx_d7c2e734._.js"
+    ]
+  },
+  "ampFirstPages": []
+}
