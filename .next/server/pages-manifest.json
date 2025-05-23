@@ -1,6 +1,0 @@
-{
-  "/_app": "pages/_app.js",
-  "/_document": "pages/_document.js",
-  "/portfolio/Portfolio": "pages/portfolio/Portfolio.js",
-  "/product/Product": "pages/product/Product.js"
-}
