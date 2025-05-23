@@ -6,7 +6,6 @@ import { motion } from 'framer-motion';
 const Banner = () => {
   return (
     <section className="relative bg-[url('/zinfog-life.jpg')] bg-cover bg-center h-screen">
-      {/* Optional dark overlay */}
       <div className="absolute inset-0 bg-black/40" />
 
       {/* Animated content */}
